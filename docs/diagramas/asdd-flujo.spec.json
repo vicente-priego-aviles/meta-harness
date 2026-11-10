@@ -1,0 +1,57 @@
+{
+ "titulo": "ASDD: de la petición al PR",
+ "descripcion": "Los pasos de la skill asdd: spec, aclarar, plan, bucle por tarea y cierre. Ver [software factory](../02-software-factory.md).",
+ "tags": ["asdd", "software-factory"],
+ "maxCaracteres": 20,
+ "huecoX": 120,
+ "huecoY": 100,
+ "nodos": [
+  {"id": "peticion", "texto": "Petición con\ndecisiones abiertas", "forma": "ellipse", "color": "naranja", "fila": 0, "col": 0},
+  {"id": "explorador", "texto": "Inventario\nexplorador (Haiku)", "color": "morado", "fila": 0, "col": 1},
+  {"id": "especificador", "texto": "Spec\nespecificador (Opus)", "color": "morado", "fila": 0, "col": 2},
+  {"id": "aclarar", "texto": "Aclarar\npor rondas", "color": "azul", "fila": 0, "col": 3},
+  {"id": "aprueba", "texto": "¿Apruebas\nla spec?", "forma": "diamond", "color": "amarillo", "fila": 0, "col": 4},
+  {"id": "plan", "texto": "Plan\n§0 restricciones", "color": "azul", "fila": 1, "col": 4},
+  {"id": "tareas", "texto": "Tareas en el gestor\n(si hay)", "color": "azul", "fila": 1, "col": 3, "discontinuo": true},
+  {"id": "desarrollador", "texto": "desarrollador\nTDD", "color": "morado", "fila": 1, "col": 2},
+  {"id": "revisores", "texto": "Riesgo real\n+ revisores", "color": "morado", "fila": 1, "col": 1},
+  {"id": "verificador", "texto": "verificador\nde hallazgos", "color": "morado", "fila": 1, "col": 0},
+  {"id": "confirmados", "texto": "¿Hallazgos\nconfirmados?", "forma": "diamond", "color": "amarillo", "fila": 2, "col": 0},
+  {"id": "controles", "texto": "Controles\nmvnq · ArchUnit", "color": "rojo", "fila": 2, "col": 1},
+  {"id": "progreso", "texto": "Línea en\nprogreso", "color": "verde", "fila": 2, "col": 2},
+  {"id": "quedan", "texto": "¿Quedan\ntareas?", "forma": "diamond", "color": "amarillo", "fila": 2, "col": 3},
+  {"id": "cierre", "texto": "Verificación\npor criterio", "color": "rojo", "fila": 2, "col": 4},
+  {"id": "pr", "texto": "PR\nsi es riesgo 2,\nlo apruebas tú", "color": "verde", "fila": 3, "col": 4}
+ ],
+ "aristas": [
+  {"de": "peticion", "a": "explorador"},
+  {"de": "explorador", "a": "especificador"},
+  {"de": "especificador", "a": "aclarar"},
+  {"de": "aclarar", "a": "aprueba"},
+  {"de": "aprueba", "a": "aclarar", "texto": "dudas", "estilo": "discontinua", "curva": 0.35},
+  {"de": "aprueba", "a": "plan", "texto": "sí"},
+  {"de": "plan", "a": "tareas"},
+  {"de": "tareas", "a": "desarrollador"},
+  {"de": "desarrollador", "a": "revisores"},
+  {"de": "revisores", "a": "verificador"},
+  {"de": "verificador", "a": "confirmados"},
+  {"de": "confirmados", "a": "desarrollador", "texto": "sí", "estilo": "discontinua", "curva": -0.12, "posTexto": 0.7},
+  {"de": "confirmados", "a": "controles", "texto": "no"},
+  {"de": "controles", "a": "progreso"},
+  {"de": "progreso", "a": "quedan"},
+  {"de": "quedan", "a": "desarrollador", "texto": "sí", "estilo": "discontinua", "curva": 0.12},
+  {"de": "quedan", "a": "cierre", "texto": "no"},
+  {"de": "cierre", "a": "pr"}
+ ],
+ "grupos": [
+  {"texto": "Por cada tarea (revisión: máximo 3 rondas)", "nodos": ["desarrollador", "revisores", "verificador", "confirmados", "controles", "progreso", "quedan"], "color": "gris"}
+ ],
+ "leyenda": [
+  {"color": "naranja", "forma": "ellipse", "texto": "entrada"},
+  {"color": "azul", "texto": "agente principal"},
+  {"color": "morado", "texto": "subagente aislado"},
+  {"color": "rojo", "texto": "control hecho por código"},
+  {"color": "verde", "texto": "resultado"},
+  {"color": "amarillo", "forma": "diamond", "texto": "decisión («apruebas»: tuya)"}
+ ]
+}

@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0",
+  "perfil": "standard",
+  "brain": "brain",
+  "desactivados": [],
+  "protegidos": [],
+  "riesgo": { "nivel0": [], "nivel2": [], "contenido2": [] }
+}

@@ -1,0 +1,32 @@
+{
+ "titulo": "Módulos del catálogo",
+ "descripcion": "Qué módulos existen, qué los activa y de cuál depende cada uno. Ver [paquete de stack](../componentes/paquete-stack-java.md) y [módulos git y tareas](../componentes/modulos-git-tareas.md).",
+ "tags": ["modulos", "instalador"],
+ "maxCaracteres": 34,
+ "huecoX": 70,
+ "huecoY": 90,
+ "nodos": [
+  {"id": "senal", "texto": "Señales del proyecto\npom.xml · dominio/ · *.bpmn\nio.camunda · com.vaadin", "color": "naranja", "forma": "ellipse", "fila": 0, "col": 0, "ancho": 400, "alto": 140},
+  {"id": "nucleo", "texto": "nucleo (siempre)\nbrain · ftd · asdd · interrogar\nrevision · hooks · riesgo · mvnq", "color": "amarillo", "fila": 0, "col": 1, "ancho": 320},
+  {"id": "respuesta", "texto": "Tu respuesta\nal instalar:\n¿qué gestor usas?", "color": "naranja", "forma": "ellipse", "fila": 0, "col": 2, "ancho": 300, "alto": 130},
+  {"id": "git", "texto": "git\ngit · release", "color": "azul", "fila": 1, "col": 0},
+  {"id": "java", "texto": "java\njava-spring-boot · secuencia\nrevisor-java-spring\nreparador-compilacion", "color": "azul", "fila": 1, "col": 1},
+  {"id": "tareas", "texto": "tareas\nGitHub · Jira · GitLab\ntarea.mjs", "color": "azul", "fila": 1, "col": 2},
+  {"id": "ddd", "texto": "ddd\nddd-hexagonal\nrevisor-ddd", "color": "azul", "fila": 2, "col": 0},
+  {"id": "camunda", "texto": "camunda\ncamunda-8 + referencias\nrevisor-camunda", "color": "azul", "fila": 2, "col": 1},
+  {"id": "vaadin", "texto": "vaadin\nvaadin-flow", "color": "azul", "fila": 2, "col": 2}
+ ],
+ "aristas": [
+  {"de": "senal", "a": "git", "estilo": "discontinua", "texto": "repo git o build"},
+  {"de": "senal", "a": "java", "estilo": "discontinua", "texto": "activan"},
+  {"de": "respuesta", "a": "tareas", "estilo": "discontinua", "texto": "activa"},
+  {"de": "ddd", "a": "java", "texto": "requiere"},
+  {"de": "camunda", "a": "java", "texto": "requiere"},
+  {"de": "vaadin", "a": "java", "texto": "requiere"}
+ ],
+ "leyenda": [
+  {"color": "amarillo", "texto": "siempre se instala"},
+  {"color": "azul", "texto": "módulo opcional (se suma al núcleo)"},
+  {"color": "naranja", "forma": "ellipse", "texto": "lo que mira el instalador"}
+ ]
+}

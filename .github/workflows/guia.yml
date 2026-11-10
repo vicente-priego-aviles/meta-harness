@@ -1,0 +1,39 @@
+# Publica la guía (MkDocs Material) en GitHub Pages en cada push a main.
+# En el repositorio: Settings → Pages → Source: GitHub Actions.
+name: Guía web
+on:
+  push:
+    branches: [main]
+    paths: ["docs/guia/**", "mkdocs.yml", "requirements-docs.txt", ".github/workflows/guia.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # la fecha de actualización de cada página sale del historial de git
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-docs.txt
+      - run: mkdocs build --strict
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  desplegar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4

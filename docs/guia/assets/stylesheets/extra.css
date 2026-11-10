@@ -1,0 +1,29 @@
+/* Morado Obsidian */
+:root, [data-md-color-scheme="default"] {
+  --md-primary-fg-color: #7c3aed;
+  --md-primary-fg-color--light: #a78bfa;
+  --md-primary-fg-color--dark: #5b21b6;
+  --md-accent-fg-color: #8b5cf6;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #8b5cf6;
+  --md-primary-fg-color--light: #c4b5fd;
+  --md-primary-fg-color--dark: #6d28d9;
+  --md-accent-fg-color: #a78bfa;
+  --md-hue: 260;
+}
+/* Portada */
+.mh-hero { text-align: center; padding: 1.5rem 0 1rem; }
+.mh-hero h1 { font-weight: 700; margin-bottom: .2rem; }
+.mh-hero .mh-lema { font-size: 1.25rem; opacity: .85; margin-bottom: 1.2rem; }
+/* Diagramas: fondo claro también en modo oscuro (los colores del dibujo son de modo claro) */
+.mh-diagrama { background: #fff; border-radius: 10px; padding: .6rem; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
+/* Tarjetas de la portada en 2 columnas (1 en móvil) */
+.md-typeset .grid.mh-dos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media screen and (max-width: 44.9375em) { .md-typeset .grid.mh-dos { grid-template-columns: 1fr; } }
+.mh-hero h1 { color: var(--md-primary-fg-color); }
+
+/* Diagramas Mermaid: se amplían al hacer clic (assets/javascripts/mermaid-ampliar.js) */
+div.mermaid[data-mh] { cursor: zoom-in; }
+.mh-mermaid-ampliado { background: var(--md-default-bg-color); padding: 1rem; border-radius: 10px; }
+.mh-mermaid-ampliado svg { width: 100%; height: auto; max-width: none !important; }

@@ -1,0 +1,222 @@
+{
+ "titulo": "Arquitectura: del meta-harness al proyecto",
+ "descripcion": "Qué contiene el meta-harness y qué instala en cada proyecto. Ver [arquitectura](../01-arquitectura.md).",
+ "tags": [
+  "arquitectura"
+ ],
+ "maxCaracteres": 22,
+ "huecoX": 70,
+ "huecoY": 60,
+ "nodos": [
+  {
+   "id": "catalogo",
+   "texto": "catalog/\nskills · agentes · hooks\nreglas · plantillas",
+   "color": "azul",
+   "fila": 0,
+   "col": 0
+  },
+  {
+   "id": "manifiestos",
+   "texto": "manifests/\nmódulos · perfiles\nmapa de stacks",
+   "color": "azul",
+   "fila": 1,
+   "col": 0
+  },
+  {
+   "id": "instalador",
+   "texto": "Instalador\nprimero el plan",
+   "color": "amarillo",
+   "fila": 2,
+   "col": 0
+  },
+  {
+   "id": "claudemd",
+   "texto": "CLAUDE.md\níndice < 200 líneas",
+   "color": "verde",
+   "fila": 0,
+   "col": 2
+  },
+  {
+   "id": "settings",
+   "texto": ".claude/settings.json\nhooks · permisos · env",
+   "color": "rojo",
+   "fila": 1,
+   "col": 2
+  },
+  {
+   "id": "skills",
+   "texto": ".claude/skills\nagents · rules",
+   "color": "morado",
+   "fila": 2,
+   "col": 2
+  },
+  {
+   "id": "brain",
+   "texto": "brain/\nbóveda Obsidian",
+   "color": "amarillo",
+   "fila": 0,
+   "col": 3
+  },
+  {
+   "id": "factory",
+   "texto": "brain/factory\nspecs · FTD · progreso",
+   "color": "verde",
+   "fila": 1,
+   "col": 3
+  },
+  {
+   "id": "codigo",
+   "texto": "Código Java\nMaven · BPMN · Vaadin",
+   "color": "gris",
+   "fila": 2,
+   "col": 3
+  },
+  {
+   "id": "c1",
+   "texto": "1 Brain\nmemoria",
+   "color": "blanco",
+   "fila": 3,
+   "col": 0
+  },
+  {
+   "id": "c2",
+   "texto": "2 Constitución\nreglas fijas",
+   "color": "blanco",
+   "fila": 3,
+   "col": 1
+  },
+  {
+   "id": "c3",
+   "texto": "3 Procesos\nResponder · FTD · ASDD",
+   "color": "blanco",
+   "fila": 3,
+   "col": 2
+  },
+  {
+   "id": "c4",
+   "texto": "4 Guardarraíles\nhooks + riesgo",
+   "color": "blanco",
+   "fila": 3,
+   "col": 3
+  },
+  {
+   "id": "c5",
+   "texto": "5 Herramientas\nconexiones probadas",
+   "color": "blanco",
+   "fila": 4,
+   "col": 0
+  },
+  {
+   "id": "tokens",
+   "texto": "Transversal:\nahorro de tokens",
+   "color": "verde",
+   "fila": 4,
+   "col": 1
+  }
+ ],
+ "aristas": [
+  {
+   "de": "manifiestos",
+   "a": "catalogo",
+   "texto": "describen",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "manifiestos",
+   "a": "instalador"
+  },
+  {
+   "de": "instalador",
+   "a": "skills",
+   "texto": "instala"
+  },
+  {
+   "de": "instalador",
+   "a": "settings"
+  },
+  {
+   "de": "instalador",
+   "a": "claudemd"
+  },
+  {
+   "de": "claudemd",
+   "a": "brain",
+   "texto": "Brain: brain/"
+  },
+  {
+   "de": "skills",
+   "a": "codigo",
+   "texto": "trabajan"
+  },
+  {
+   "de": "factory",
+   "a": "codigo",
+   "estilo": "discontinua",
+   "doble": true
+  }
+ ],
+ "grupos": [
+  {
+   "texto": "Repo meta-harness",
+   "nodos": [
+    "catalogo",
+    "manifiestos",
+    "instalador"
+   ]
+  },
+  {
+   "texto": "Repo del proyecto (tras instalar)",
+   "nodos": [
+    "claudemd",
+    "settings",
+    "skills",
+    "brain",
+    "factory",
+    "codigo"
+   ],
+   "color": "blanco"
+  },
+  {
+   "texto": "Capas del harness",
+   "nodos": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "tokens"
+   ],
+   "color": "blanco"
+  }
+ ],
+ "leyenda": [
+  {
+   "color": "azul",
+   "texto": "catálogo del meta-harness"
+  },
+  {
+   "color": "amarillo",
+   "texto": "pieza central"
+  },
+  {
+   "color": "morado",
+   "texto": "skills y agentes (IA)"
+  },
+  {
+   "color": "rojo",
+   "texto": "guardarraíles"
+  },
+  {
+   "color": "verde",
+   "texto": "documentos del proyecto y ahorro"
+  },
+  {
+   "color": "gris",
+   "texto": "tu código (el harness no lo cambia)"
+  },
+  {
+   "color": "blanco",
+   "texto": "capa del harness"
+  }
+ ]
+}

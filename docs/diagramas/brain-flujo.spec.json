@@ -1,0 +1,188 @@
+{
+ "titulo": "Brain: ingerir, consultar, revisar",
+ "descripcion": "Operaciones de la skill brain. Ver [ficha](../componentes/skill-brain.md).",
+ "tags": [
+  "brain"
+ ],
+ "maxCaracteres": 20,
+ "huecoX": 100,
+ "nodos": [
+  {
+   "id": "fuente",
+   "texto": "Fuente\nweb · vídeo · repo",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 0,
+   "col": 0
+  },
+  {
+   "id": "raw",
+   "texto": "raw/\n(inmutable)",
+   "color": "gris",
+   "fila": 0,
+   "col": 1
+  },
+  {
+   "id": "triage",
+   "texto": "¿Qué aporta?",
+   "forma": "diamond",
+   "color": "amarillo",
+   "fila": 0,
+   "col": 2
+  },
+  {
+   "id": "nada",
+   "texto": "Sin material\n→ solo log",
+   "color": "gris",
+   "fila": 1,
+   "col": 2,
+   "discontinuo": true
+  },
+  {
+   "id": "compilar",
+   "texto": "Compilar nota\n(datos anclados)",
+   "color": "azul",
+   "fila": 0,
+   "col": 3
+  },
+  {
+   "id": "cascada",
+   "texto": "Cascada\n+ callouts",
+   "color": "azul",
+   "fila": 1,
+   "col": 3
+  },
+  {
+   "id": "indice",
+   "texto": "index.md\n+ log.md",
+   "color": "verde",
+   "fila": 2,
+   "col": 3
+  },
+  {
+   "id": "pregunta",
+   "texto": "Pregunta",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 2,
+   "col": 0
+  },
+  {
+   "id": "consulta",
+   "texto": "Leer índice\n+ buscar",
+   "color": "azul",
+   "fila": 2,
+   "col": 1
+  },
+  {
+   "id": "respuesta",
+   "texto": "Respuesta con citas\n(archivar si se pide)",
+   "color": "verde",
+   "fila": 3,
+   "col": 1
+  },
+  {
+   "id": "lint",
+   "texto": "Lint\nverificar_evidencias.py",
+   "color": "rojo",
+   "fila": 3,
+   "col": 3
+  }
+ ],
+ "aristas": [
+  {
+   "de": "fuente",
+   "a": "raw",
+   "texto": "defuddle\nyt-dlp · gh"
+  },
+  {
+   "de": "raw",
+   "a": "triage"
+  },
+  {
+   "de": "triage",
+   "a": "nada",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "triage",
+   "a": "compilar",
+   "texto": "nueva / actualiza"
+  },
+  {
+   "de": "compilar",
+   "a": "cascada"
+  },
+  {
+   "de": "cascada",
+   "a": "indice"
+  },
+  {
+   "de": "pregunta",
+   "a": "consulta"
+  },
+  {
+   "de": "consulta",
+   "a": "indice",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "consulta",
+   "a": "respuesta"
+  },
+  {
+   "de": "lint",
+   "a": "indice",
+   "estilo": "discontinua"
+  }
+ ],
+ "grupos": [
+  {
+   "texto": "Ingerir",
+   "nodos": [
+    "fuente",
+    "raw",
+    "triage",
+    "nada",
+    "compilar",
+    "cascada"
+   ]
+  },
+  {
+   "texto": "Consultar",
+   "nodos": [
+    "pregunta",
+    "consulta",
+    "respuesta"
+   ],
+   "color": "blanco"
+  }
+ ],
+ "leyenda": [
+  {
+   "color": "naranja",
+   "texto": "entrada"
+  },
+  {
+   "color": "azul",
+   "texto": "paso del agente"
+  },
+  {
+   "color": "verde",
+   "texto": "resultado"
+  },
+  {
+   "color": "rojo",
+   "texto": "comprobación con código"
+  },
+  {
+   "color": "gris",
+   "texto": "no se modifica"
+  },
+  {
+   "color": "amarillo",
+   "forma": "diamond",
+   "texto": "decisión del agente"
+  }
+ ]
+}

@@ -1,0 +1,277 @@
+{
+ "titulo": "Software factory: carriles y bucle ASDD",
+ "descripcion": "Cómo viaja una petición por la factoría. Ver [software factory](../02-software-factory.md).",
+ "tags": [
+  "software-factory",
+  "asdd",
+  "ftd"
+ ],
+ "maxCaracteres": 20,
+ "huecoX": 120,
+ "huecoY": 100,
+ "nodos": [
+  {
+   "id": "peticion",
+   "texto": "Petición",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 0,
+   "col": 0
+  },
+  {
+   "id": "decisor",
+   "texto": "¿Qué carril?",
+   "forma": "diamond",
+   "color": "amarillo",
+   "fila": 0,
+   "col": 1
+  },
+  {
+   "id": "responder",
+   "texto": "Responder\n(solo lectura)",
+   "color": "gris",
+   "fila": 0,
+   "col": 2
+  },
+  {
+   "id": "ftd",
+   "texto": "FTD\ndocumento + checklist",
+   "color": "azul",
+   "fila": 1,
+   "col": 1
+  },
+  {
+   "id": "spec",
+   "texto": "Spec ASDD\n4 preguntas",
+   "color": "morado",
+   "fila": 1,
+   "col": 2
+  },
+  {
+   "id": "aprobar",
+   "texto": "✋ Aprobar spec",
+   "color": "amarillo",
+   "fila": 1,
+   "col": 3
+  },
+  {
+   "id": "plan",
+   "texto": "Plan + tareas\nrestricciones literales",
+   "color": "morado",
+   "fila": 1,
+   "col": 4
+  },
+  {
+   "id": "tdd",
+   "texto": "Tarea con TDD\n(desarrollador)",
+   "color": "azul",
+   "fila": 2,
+   "col": 4
+  },
+  {
+   "id": "riesgo",
+   "texto": "Riesgo 0·1·2\n(lo calcula código)",
+   "color": "rojo",
+   "fila": 3,
+   "col": 4
+  },
+  {
+   "id": "revisores",
+   "texto": "Revisores\ncontexto limpio",
+   "color": "morado",
+   "fila": 3,
+   "col": 3
+  },
+  {
+   "id": "verificador",
+   "texto": "Verificar hallazgos\ncontra el código",
+   "color": "morado",
+   "fila": 3,
+   "col": 2
+  },
+  {
+   "id": "controles",
+   "texto": "Controles\nmvn verify · ArchUnit\ntests de proceso",
+   "color": "rojo",
+   "fila": 3,
+   "col": 1
+  },
+  {
+   "id": "cola",
+   "texto": "Cola de decisiones ✋",
+   "color": "amarillo",
+   "fila": 2,
+   "col": 2,
+   "discontinuo": true
+  },
+  {
+   "id": "cierre",
+   "texto": "Cierre: e2e +\nevidencias en brain",
+   "color": "verde",
+   "fila": 4,
+   "col": 1
+  },
+  {
+   "id": "final",
+   "texto": "¿Riesgo?",
+   "forma": "diamond",
+   "color": "amarillo",
+   "fila": 4,
+   "col": 2
+  },
+  {
+   "id": "merge",
+   "texto": "Merge\nautomático",
+   "color": "verde",
+   "fila": 4,
+   "col": 3
+  },
+  {
+   "id": "pr",
+   "texto": "✋ PR con\naprobación humana",
+   "color": "amarillo",
+   "fila": 5,
+   "col": 2
+  }
+ ],
+ "aristas": [
+  {
+   "de": "peticion",
+   "a": "decisor"
+  },
+  {
+   "de": "decisor",
+   "a": "responder",
+   "texto": "información"
+  },
+  {
+   "de": "decisor",
+   "a": "ftd",
+   "texto": "cambio claro"
+  },
+  {
+   "de": "decisor",
+   "a": "spec",
+   "texto": "ambiguo"
+  },
+  {
+   "de": "ftd",
+   "a": "spec",
+   "texto": "sube si riesgo 2",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "spec",
+   "a": "aprobar"
+  },
+  {
+   "de": "aprobar",
+   "a": "plan"
+  },
+  {
+   "de": "plan",
+   "a": "tdd"
+  },
+  {
+   "de": "tdd",
+   "a": "riesgo"
+  },
+  {
+   "de": "riesgo",
+   "a": "revisores"
+  },
+  {
+   "de": "revisores",
+   "a": "verificador"
+  },
+  {
+   "de": "verificador",
+   "a": "controles"
+  },
+  {
+   "de": "verificador",
+   "a": "cola",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "controles",
+   "a": "tdd",
+   "texto": "falla: máx 3 rondas",
+   "estilo": "discontinua",
+   "curva": 0.05,
+   "posTexto": 0.75
+  },
+  {
+   "de": "controles",
+   "a": "cierre"
+  },
+  {
+   "de": "ftd",
+   "a": "controles",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "cierre",
+   "a": "final"
+  },
+  {
+   "de": "final",
+   "a": "merge",
+   "texto": "0 · 1"
+  },
+  {
+   "de": "final",
+   "a": "pr",
+   "texto": "2"
+  }
+ ],
+ "grupos": [
+  {
+   "texto": "Bucle por tarea (ASDD)",
+   "nodos": [
+    "tdd",
+    "riesgo",
+    "revisores",
+    "verificador",
+    "controles",
+    "cola"
+   ],
+   "color": "gris"
+  }
+ ],
+ "leyenda": [
+  {
+   "color": "naranja",
+   "texto": "entrada"
+  },
+  {
+   "color": "amarillo",
+   "texto": "decisión o aprobación tuya (✋)"
+  },
+  {
+   "color": "azul",
+   "texto": "trabajo sobre el código"
+  },
+  {
+   "color": "morado",
+   "texto": "especificar y revisar (subagentes)"
+  },
+  {
+   "color": "rojo",
+   "texto": "control hecho por código"
+  },
+  {
+   "color": "verde",
+   "texto": "resultado"
+  },
+  {
+   "color": "gris",
+   "texto": "sin cambios en el repo"
+  },
+  {
+   "color": "blanco",
+   "forma": "diamond",
+   "texto": "decisión"
+  }
+ ]
+}

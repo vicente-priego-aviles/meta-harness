@@ -1,0 +1,48 @@
+{
+ "titulo": "FTD: un cambio claro, paso a paso",
+ "descripcion": "Los pasos de la skill ftd. Ver [software factory](../02-software-factory.md).",
+ "tags": ["ftd", "software-factory"],
+ "maxCaracteres": 20,
+ "huecoX": 110,
+ "huecoY": 90,
+ "nodos": [
+  {"id": "peticion", "texto": "Petición clara\no tarea #23", "forma": "ellipse", "color": "naranja", "fila": 0, "col": 0},
+  {"id": "brain", "texto": "Consultar el brain\ndecisiones · glosario", "color": "azul", "fila": 0, "col": 1},
+  {"id": "doc", "texto": "Rama de trabajo\n+ documento FTD", "color": "azul", "fila": 0, "col": 2},
+  {"id": "previsto", "texto": "Riesgo previsto\ncon las rutas", "color": "rojo", "fila": 0, "col": 3},
+  {"id": "dec1", "texto": "¿Riesgo 2 o\ndecisión abierta?", "forma": "diamond", "color": "amarillo", "fila": 0, "col": 4},
+  {"id": "asdd", "texto": "Sube a ASDD", "color": "gris", "fila": 1, "col": 5, "discontinuo": true},
+  {"id": "tdd", "texto": "TDD\ntest rojo → verde", "color": "azul", "fila": 1, "col": 4},
+  {"id": "real", "texto": "Riesgo real\nal terminar", "color": "rojo", "fila": 2, "col": 4},
+  {"id": "dec2", "texto": "¿Riesgo?", "forma": "diamond", "color": "amarillo", "fila": 3, "col": 4},
+  {"id": "revisor", "texto": "Un revisor de\ncontexto limpio", "color": "morado", "fila": 4, "col": 4},
+  {"id": "controles", "texto": "Controles\nmvnq verify", "color": "rojo", "fila": 4, "col": 3},
+  {"id": "evidencia", "texto": "Evidencia\nen el FTD", "color": "verde", "fila": 4, "col": 2},
+  {"id": "cierre", "texto": "Commit: código\n+ FTD juntos", "color": "verde", "fila": 4, "col": 1}
+ ],
+ "aristas": [
+  {"de": "peticion", "a": "brain"},
+  {"de": "brain", "a": "doc"},
+  {"de": "doc", "a": "previsto"},
+  {"de": "previsto", "a": "dec1"},
+  {"de": "dec1", "a": "asdd", "texto": "sí", "estilo": "discontinua"},
+  {"de": "dec1", "a": "tdd", "texto": "no"},
+  {"de": "tdd", "a": "real"},
+  {"de": "real", "a": "dec2"},
+  {"de": "dec2", "a": "asdd", "texto": "2", "estilo": "discontinua", "curva": -0.12},
+  {"de": "dec2", "a": "revisor", "texto": "1"},
+  {"de": "dec2", "a": "controles", "texto": "0"},
+  {"de": "revisor", "a": "controles"},
+  {"de": "controles", "a": "evidencia"},
+  {"de": "evidencia", "a": "cierre"}
+ ],
+ "leyenda": [
+  {"color": "naranja", "forma": "ellipse", "texto": "entrada"},
+  {"color": "azul", "texto": "trabajo del agente"},
+  {"color": "rojo", "texto": "control hecho por código"},
+  {"color": "morado", "texto": "revisión (subagente)"},
+  {"color": "verde", "texto": "resultado"},
+  {"color": "gris", "texto": "sale del FTD"},
+  {"color": "amarillo", "forma": "diamond", "texto": "decisión"}
+ ]
+}

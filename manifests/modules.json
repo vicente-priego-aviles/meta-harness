@@ -1,0 +1,166 @@
+{
+  "$comentario": "Módulos del catálogo. El instalador (Fase 4) los selecciona según la entrevista y las señales del proyecto.",
+  "modulos": {
+    "nucleo": {
+      "descripcion": "Orientación, hooks, riesgo, mvnq, brain, carriles FTD/ASDD, revisión y subagentes base",
+      "siempre": true,
+      "skills": [
+        "brain",
+        "ftd",
+        "asdd",
+        "interrogar",
+        "revision",
+        "obsidian-markdown",
+        "obsidian-bases",
+        "defuddle",
+        "excalidraw"
+      ],
+      "agentes": [
+        "especificador",
+        "desarrollador",
+        "revisor-correccion",
+        "revisor-tests",
+        "revisor-seguridad",
+        "verificador-hallazgos",
+        "explorador",
+        "ejecutor-tests"
+      ],
+      "reglas": [
+        "brain"
+      ],
+      "hooks": [
+        "sesion-inicio",
+        "bash-previo",
+        "editar-previo",
+        "editar-posterior",
+        "compactar",
+        "sesion-fin",
+        "parar"
+      ]
+    },
+    "java": {
+      "descripcion": "Java moderno + Spring Boot, JPA, Flyway y tests por capa",
+      "señales": {
+        "archivos": [
+          "pom.xml",
+          "build.gradle",
+          "build.gradle.kts"
+        ],
+        "dependencias": [
+          "spring-boot"
+        ]
+      },
+      "skills": [
+        "java-spring-boot",
+        "secuencia"
+      ],
+      "agentes": [
+        "revisor-java-spring",
+        "reparador-compilacion"
+      ],
+      "reglas": [
+        "java",
+        "migraciones"
+      ]
+    },
+    "ddd": {
+      "descripcion": "DDD táctico y arquitectura hexagonal con jMolecules y ArchUnit",
+      "señales": {
+        "rutas": [
+          "**/dominio/**",
+          "**/domain/**"
+        ],
+        "dependencias": [
+          "jmolecules"
+        ]
+      },
+      "requiere": [
+        "java"
+      ],
+      "skills": [
+        "ddd-hexagonal"
+      ],
+      "agentes": [
+        "revisor-ddd"
+      ],
+      "reglas": [
+        "dominio"
+      ]
+    },
+    "camunda": {
+      "descripcion": "Camunda 8: workers, BPMN/DMN, tests de proceso (+ referencias oficiales de Camunda)",
+      "señales": {
+        "rutas": [
+          "**/*.bpmn",
+          "**/*.dmn"
+        ],
+        "dependencias": [
+          "io.camunda",
+          "camunda-spring-boot"
+        ]
+      },
+      "requiere": [
+        "java"
+      ],
+      "skills": [
+        "camunda-8"
+      ],
+      "agentes": [
+        "revisor-camunda"
+      ],
+      "reglas": [
+        "camunda"
+      ],
+      "vendor": [
+        "camunda"
+      ]
+    },
+    "vaadin": {
+      "descripcion": "Vistas Vaadin Flow con seguridad y tests sin navegador",
+      "señales": {
+        "dependencias": [
+          "com.vaadin"
+        ]
+      },
+      "requiere": [
+        "java"
+      ],
+      "skills": [
+        "vaadin-flow"
+      ],
+      "agentes": [],
+      "reglas": [
+        "vaadin"
+      ]
+    },
+    "git": {
+      "descripcion": "Commits con la convención del proyecto, ramas, pull requests y releases con CHANGELOG",
+      "señales": {
+        "git": true,
+        "archivos": [
+          "pom.xml",
+          "build.gradle",
+          "build.gradle.kts",
+          "package.json"
+        ]
+      },
+      "skills": [
+        "git",
+        "release"
+      ],
+      "agentes": [],
+      "reglas": []
+    },
+    "tareas": {
+      "descripcion": "Trabajo desde GitHub Issues, Jira o GitLab con tarea.mjs",
+      "señales": {
+        "respuesta": "gestor"
+      },
+      "skills": [
+        "tareas"
+      ],
+      "agentes": [],
+      "reglas": []
+    }
+  }
+}

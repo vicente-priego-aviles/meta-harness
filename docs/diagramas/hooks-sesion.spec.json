@@ -1,0 +1,207 @@
+{
+ "titulo": "Hooks a lo largo de una sesión",
+ "descripcion": "Qué hook salta en cada momento y qué hace. Ver [hooks](../componentes/hooks.md).",
+ "tags": [
+  "hooks"
+ ],
+ "maxCaracteres": 30,
+ "huecoX": 50,
+ "huecoY": 70,
+ "nodos": [
+  {
+   "id": "inicio",
+   "texto": "SessionStart",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 0,
+   "col": 0
+  },
+  {
+   "id": "h1",
+   "texto": "sesion-inicio\norientación + estado\n≤ 1,5 KB",
+   "color": "morado",
+   "fila": 1,
+   "col": 0
+  },
+  {
+   "id": "bash",
+   "texto": "Antes de Bash",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 0,
+   "col": 1
+  },
+  {
+   "id": "h2",
+   "texto": "bash-previo\npeligro → preguntar\ncommit en rama protegida\no sin convención → bloquear\npush de riesgo 2 sin spec\n→ bloquear\nmaven → usar mvnq",
+   "color": "rojo",
+   "fila": 1,
+   "col": 1
+  },
+  {
+   "id": "editar",
+   "texto": "Antes / después\nde editar",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 0,
+   "col": 2
+  },
+  {
+   "id": "h3",
+   "texto": "editar-previo\nconfig protegida → preguntar",
+   "color": "rojo",
+   "fila": 1,
+   "col": 2
+  },
+  {
+   "id": "h4",
+   "texto": "editar-posterior\ncódigo sin FTD → aviso único",
+   "color": "amarillo",
+   "fila": 2,
+   "col": 2
+  },
+  {
+   "id": "parar",
+   "texto": "Stop\n(fin de cada respuesta)",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 0,
+   "col": 3
+  },
+  {
+   "id": "h7",
+   "texto": "parar\nriesgo 2 sin spec\n→ aviso único",
+   "color": "amarillo",
+   "fila": 1,
+   "col": 3
+  },
+  {
+   "id": "compact",
+   "texto": "PreCompact",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 0,
+   "col": 4
+  },
+  {
+   "id": "h5",
+   "texto": "compactar\nworklog + qué conservar",
+   "color": "verde",
+   "fila": 1,
+   "col": 4
+  },
+  {
+   "id": "fin",
+   "texto": "SessionEnd",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 0,
+   "col": 5
+  },
+  {
+   "id": "h6",
+   "texto": "sesion-fin\nworklog + limpieza",
+   "color": "verde",
+   "fila": 1,
+   "col": 5
+  },
+  {
+   "id": "brain",
+   "texto": "brain/raw/sesiones\n(hechos de git)",
+   "color": "gris",
+   "fila": 2,
+   "col": 5
+  }
+ ],
+ "aristas": [
+  {
+   "de": "inicio",
+   "a": "h1"
+  },
+  {
+   "de": "bash",
+   "a": "h2"
+  },
+  {
+   "de": "editar",
+   "a": "h3"
+  },
+  {
+   "de": "h3",
+   "a": "h4",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "compact",
+   "a": "h5"
+  },
+  {
+   "de": "fin",
+   "a": "h6"
+  },
+  {
+   "de": "h5",
+   "a": "brain"
+  },
+  {
+   "de": "h6",
+   "a": "brain"
+  },
+  {
+   "de": "inicio",
+   "a": "bash",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "bash",
+   "a": "editar",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "compact",
+   "a": "fin",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "parar",
+   "a": "h7"
+  },
+  {
+   "de": "editar",
+   "a": "parar",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "parar",
+   "a": "compact",
+   "estilo": "discontinua"
+  }
+ ],
+ "leyenda": [
+  {
+   "color": "naranja",
+   "forma": "ellipse",
+   "texto": "evento de Claude Code"
+  },
+  {
+   "color": "morado",
+   "texto": "da contexto al agente"
+  },
+  {
+   "color": "rojo",
+   "texto": "puede bloquear o preguntar"
+  },
+  {
+   "color": "amarillo",
+   "texto": "solo avisa"
+  },
+  {
+   "color": "verde",
+   "texto": "guarda el registro"
+  },
+  {
+   "color": "gris",
+   "texto": "archivo en el brain"
+  }
+ ]
+}

@@ -1,0 +1,159 @@
+{
+ "titulo": "Instalador: primero el plan",
+ "descripcion": "Flujo de mh instalar. Ver [instalador](../05-instalador.md).",
+ "tags": [
+  "instalador"
+ ],
+ "maxCaracteres": 22,
+ "huecoX": 60,
+ "huecoY": 70,
+ "nodos": [
+  {
+   "id": "orden",
+   "texto": "mh instalar",
+   "forma": "ellipse",
+   "color": "naranja",
+   "fila": 0,
+   "col": 0
+  },
+  {
+   "id": "resp",
+   "texto": "¿Faltan\nrespuestas?",
+   "forma": "diamond",
+   "color": "amarillo",
+   "fila": 0,
+   "col": 1
+  },
+  {
+   "id": "preg",
+   "texto": "Preguntas (terminal)\no JSON para Claude\n(código 2)",
+   "color": "gris",
+   "fila": 1,
+   "col": 1
+  },
+  {
+   "id": "escaneo",
+   "texto": "Escaneo del proyecto\npom · BPMN · dominio/\nCLAUDE.md · .gitignore",
+   "color": "azul",
+   "fila": 0,
+   "col": 2
+  },
+  {
+   "id": "plan",
+   "texto": "Plan con id\nseleccionado · aplazado\nexcluido · avisos\npresupuesto",
+   "color": "azul",
+   "fila": 0,
+   "col": 3
+  },
+  {
+   "id": "acepta",
+   "texto": "✋ ¿--aceptar-plan\ncon ese id?",
+   "forma": "diamond",
+   "color": "amarillo",
+   "fila": 1,
+   "col": 3
+  },
+  {
+   "id": "nada",
+   "texto": "No escribe nada\n(plan cambiado: código 3)",
+   "color": "gris",
+   "fila": 2,
+   "col": 4,
+   "discontinuo": true,
+   "maxCaracteres": 30
+  },
+  {
+   "id": "aplicar",
+   "texto": "Aplicar\ncopia de seguridad +\n.mh · .claude · brain",
+   "color": "verde",
+   "fila": 2,
+   "col": 3
+  },
+  {
+   "id": "doctor",
+   "texto": "comprobar\nLISTO / INCOMPLETO",
+   "color": "verde",
+   "fila": 3,
+   "col": 3
+  },
+  {
+   "id": "mant",
+   "texto": "Mantenimiento\nreevaluar · actualizar\ndesinstalar",
+   "color": "morado",
+   "fila": 3,
+   "col": 1
+  }
+ ],
+ "aristas": [
+  {
+   "de": "orden",
+   "a": "resp"
+  },
+  {
+   "de": "resp",
+   "a": "preg",
+   "texto": "sí"
+  },
+  {
+   "de": "resp",
+   "a": "escaneo",
+   "texto": "no"
+  },
+  {
+   "de": "escaneo",
+   "a": "plan"
+  },
+  {
+   "de": "plan",
+   "a": "acepta"
+  },
+  {
+   "de": "acepta",
+   "a": "nada",
+   "texto": "no / otro id",
+   "estilo": "discontinua"
+  },
+  {
+   "de": "acepta",
+   "a": "aplicar",
+   "texto": "sí"
+  },
+  {
+   "de": "aplicar",
+   "a": "doctor"
+  },
+  {
+   "de": "mant",
+   "a": "doctor",
+   "estilo": "discontinua"
+  }
+ ],
+ "leyenda": [
+  {
+   "color": "naranja",
+   "forma": "ellipse",
+   "texto": "orden que das tú"
+  },
+  {
+   "color": "azul",
+   "texto": "analiza, no escribe"
+  },
+  {
+   "color": "verde",
+   "texto": "escribe y comprueba"
+  },
+  {
+   "color": "gris",
+   "texto": "termina sin cambios"
+  },
+  {
+   "color": "morado",
+   "texto": "otras órdenes"
+  },
+  {
+   "color": "amarillo",
+   "forma": "diamond",
+   "texto": "decisión (✋ = tuya)"
+  }
+ ]
+}

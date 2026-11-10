@@ -1,0 +1,35 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - file.inFolder("factory")
+    - file.hasProperty("type")
+views:
+  - type: table
+    name: "Trabajo en curso"
+    filters:
+      or:
+        - 'estado == "en-curso"'
+        - 'estado == "borrador"'
+        - 'estado == "aprobada"'
+    groupBy:
+      property: type
+      direction: ASC
+    order: [file.name, type, estado, rama, riesgo, file.mtime]
+  - type: table
+    name: "Specs"
+    filters: 'type == "Spec"'
+    groupBy:
+      property: estado
+      direction: ASC
+    order: [file.name, description, estado, riesgo, rama]
+  - type: table
+    name: "FTD"
+    filters: 'type == "FTD"'
+    order: [file.name, description, estado, riesgo]
+  - type: table
+    name: "Verificaciones y revisiones"
+    filters:
+      or:
+        - 'type == "Verificación"'
+        - 'type == "Revisión"'
+    order: [file.name, type, resultado, rama, file.mtime]

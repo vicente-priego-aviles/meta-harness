@@ -1,0 +1,7 @@
+{
+  "name": "meta-harness-tools",
+  "private": true,
+  "type": "module",
+  "description": "Herramientas de desarrollo del repo (no se instalan en los proyectos)",
+  "dependencies": { "roughjs": "4.6.6" }
+}
