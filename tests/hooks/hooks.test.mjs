@@ -61,6 +61,8 @@ describe("riesgo", () => {
     assert.equal(riesgo.evaluar(["docs/a.md"]).nivel, 0);
     assert.equal(riesgo.evaluar(["src/main/java/App.java", "docs/a.md"]).nivel, 1);
     assert.equal(riesgo.evaluar(["src/main/resources/reserva.bpmn"]).nivel, 2);
+    assert.equal(riesgo.evaluar(["web/package.json"]).nivel, 2, "dependencias de Node");
+    assert.equal(riesgo.evaluar(["pnpm-lock.yaml"]).nivel, 2, "lockfile");
     assert.equal(riesgo.evaluar(["src/main/resources/db/migration/V2__x.sql"]).nivel, 2);
     assert.equal(riesgo.evaluar(["src\\main\\resources\\db\\migration\\V2__x.sql"]).nivel, 2, "rutas de Windows");
     assert.equal(riesgo.evaluar(["src/A.java"], {}, () => "+ PasswordEncoder enc;").nivel, 2);

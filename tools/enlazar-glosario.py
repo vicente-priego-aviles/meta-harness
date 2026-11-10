@@ -77,6 +77,7 @@ TERMINOS = {
     "Rebanada vertical": r"\brebanadas? vertical(?:es)?\b",
     "Node.js": r"\bNode\.js\b",
     "CLI": r"\bCLIs?\b",
+    "Lockfile": r"\blockfiles?\b",
     "Zeebe": r"\bZeebe\b",
     "Idempotencia": r"\bidempoten(?:cia|te)s?\b",
     "Instancia en vuelo": r"\binstancias? en vuelo\b",

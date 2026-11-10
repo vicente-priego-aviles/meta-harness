@@ -18,6 +18,7 @@ export const TABLA = {
     "**/*SecurityConfig*", "**/security/**",
     "**/application-prod.*", "**/application-pro.*",
     "**/pom.xml", "**/build.gradle", "**/build.gradle.kts",
+    "**/package.json", "**/package-lock.json", "**/pnpm-lock.yaml", "**/yarn.lock",
     ".github/**", ".gitlab-ci.yml", "Jenkinsfile",
     ".claude/**", ".mh/**", ".mh.json", "CLAUDE.md",
     "**/*.env", "**/.env*", "**/*secret*", "**/*credential*",

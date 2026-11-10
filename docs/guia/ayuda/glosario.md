@@ -245,6 +245,9 @@ Extensión de un archivo JavaScript escrito como **módulo ES** (el sistema de m
 ### CLI
 **Command Line Interface** — *interfaz de línea de comandos*: programa que se usa desde la terminal (por ejemplo `gh`). El meta-harness la prefiere a MCP porque gasta menos contexto.
 
+### Lockfile
+Archivo que fija la versión exacta de cada dependencia de un proyecto Node.js (`package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`), para que todos instalen lo mismo. Cambiarlo es cambiar dependencias: en el meta-harness es riesgo 2, igual que `package.json` o `pom.xml`.
+
 ### Zeebe
 Motor de procesos de Camunda 8: ejecuta los BPMN desplegados y reparte el trabajo de cada tarea automática como *jobs*.
 

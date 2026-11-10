@@ -15,7 +15,7 @@ Son de **[riesgo](../ayuda/glosario.md#riesgo) 2**:
 - base de datos: migraciones (`db/migration/**`, `db/changelog/**`) y cualquier `*.sql`;
 - seguridad: `*SecurityConfig*`, `security/**`;
 - configuración de producción: `application-prod.*`;
-- build: `pom.xml`, `build.gradle`;
+- build y dependencias: `pom.xml`, `build.gradle`, `package.json` y sus [lockfiles](../ayuda/glosario.md#lockfile) (`package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`);
 - CI: `.github/**`, `.gitlab-ci.yml`, `Jenkinsfile`;
 - el propio [harness](../ayuda/glosario.md#harness) y la configuración del agente: `.claude/**`, `.mh/**`, `.mh.json`, `CLAUDE.md`;
 - secretos: `.env*`, `*secret*`, `*credential*`.
