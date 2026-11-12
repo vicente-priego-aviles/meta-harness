@@ -3,7 +3,7 @@ type: Glosario
 title: Glosario del producto
 description: Lenguaje ubicuo del negocio; los mismos términos en código, documentación y conversación.
 tags: [glosario, ddd, producto]
-generated: { by: meta-harness, at: {{FECHA}} }
+generated: { by: meta-harness-factory, at: {{FECHA}} }
 status: draft
 ---
 

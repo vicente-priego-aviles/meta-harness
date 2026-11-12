@@ -1,4 +1,4 @@
-// Utilidades comunes de los hooks del meta-harness.
+// Utilidades comunes de los hooks de meta-harness-factory.
 // Reglas: sin dependencias, fallan en abierto (cualquier error => salir 0 sin decidir nada),
 // mensajes en español y cada bloqueo explica cómo seguir.
 import { execFileSync } from "node:child_process";
@@ -87,7 +87,7 @@ export async function enAbierto(fn) {
   try {
     await fn();
   } catch (e) {
-    if (process.env.MH_DEBUG) process.stderr.write(`[meta-harness] ${e?.stack || e}\n`);
+    if (process.env.MH_DEBUG) process.stderr.write(`[meta-harness-factory] ${e?.stack || e}\n`);
   }
   process.exit(0);
 }

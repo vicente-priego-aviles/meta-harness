@@ -52,7 +52,7 @@ El proyecto tiene ahora señales de un módulo que no se instaló (un `.bpmn`, l
 Para ver qué comando lanzaría sin ejecutarlo: `node .mh/scripts/tarea.mjs <orden> … --simular`.
 
 ## Una skill mía ha desaparecido del plan
-Si ya tenías una [skill](../ayuda/glosario.md#skill) o un [subagente](../ayuda/glosario.md#subagente) con el mismo nombre que uno del catálogo, el instalador **no lo toca** y deja fuera el suyo. El plan lo marca como excluido. Si prefieres el de [meta-harness](../ayuda/glosario.md#meta-harness), renombra el tuyo y vuelve a instalar.
+Si ya tenías una [skill](../ayuda/glosario.md#skill) o un [subagente](../ayuda/glosario.md#subagente) con el mismo nombre que uno del catálogo, el instalador **no lo toca** y deja fuera el suyo. El plan lo marca como excluido. Si prefieres el de [meta-harness-factory](../ayuda/glosario.md#meta-harness), renombra el tuyo y vuelve a instalar.
 
 ## `CLAUDE.md` demasiado largo
 `mh comprobar` y el hook de arranque avisan si pasa de 120 líneas, porque se carga en cada mensaje. Mueve el detalle a donde se carga solo cuando hace falta: un `CLAUDE.md` por módulo de Maven, las reglas o el [brain](../ayuda/glosario.md#brain).
@@ -63,7 +63,7 @@ Si ya tenías una [skill](../ayuda/glosario.md#skill) o un [subagente](../ayuda/
 - **Un diagrama aparece cambiado en git sin tocarlo**: el plugin Excalidraw guarda los dibujos comprimidos al abrirlos. El contenido es el mismo; puedes hacer commit o descartar el cambio.
 
 ## En Windows
-**meta-harness** se ha desarrollado y probado en Linux. Los scripts tienen en cuenta Windows (`mvnq` usa `mvnw.cmd` o `mvn.cmd`, las rutas con `\` se aceptan y las skills se copian, sin enlaces simbólicos), pero **no se ha probado en una máquina Windows**. Lo que puede fallar:
+**meta-harness-factory** se ha desarrollado y probado en Linux. Los scripts tienen en cuenta Windows (`mvnq` usa `mvnw.cmd` o `mvn.cmd`, las rutas con `\` se aceptan y las skills se copian, sin enlaces simbólicos), pero **no se ha probado en una máquina Windows**. Lo que puede fallar:
 
 - `init.sh` es un script de bash: necesitas Git Bash o WSL.
 - Los scripts de Python de las skills (verificación del brain, diagramas) se lanzan con `python3`; en Windows el comando puede llamarse `python` o `py`.

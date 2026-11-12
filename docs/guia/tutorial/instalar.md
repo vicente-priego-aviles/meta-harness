@@ -6,25 +6,25 @@ La instalación sigue el principio de **[primero el plan](../ayuda/glosario.md#p
 
 <small>Pulsa el diagrama para ampliarlo.</small>
 
-## 1. Prepara meta-harness y el proyecto de ejemplo
+## 1. Prepara meta-harness-factory y el proyecto de ejemplo
 El tutorial usa **[Spring PetClinic](https://github.com/spring-projects/spring-petclinic)**, la aplicación de ejemplo oficial de Spring (licencia Apache-2.0): un monolito con Spring Boot, Maven y tests. Así puedes reproducir cada paso tal cual.
 
 ```bash
-git clone <url-del-repositorio> ~/meta-harness
+git clone <url-del-repositorio> ~/meta-harness-factory
 git clone https://github.com/spring-projects/spring-petclinic.git ~/proyectos/spring-petclinic
 ```
-**[meta-harness](../ayuda/glosario.md#meta-harness)** no necesita instalar dependencias: el instalador solo usa [Node.js](../ayuda/glosario.md#nodejs). Con tu propio proyecto, el proceso es el mismo.
+**[meta-harness-factory](../ayuda/glosario.md#meta-harness)** no necesita instalar dependencias: el instalador solo usa [Node.js](../ayuda/glosario.md#nodejs). Con tu propio proyecto, el proceso es el mismo.
 
 ## 2. Lanza el instalador
 ```bash
-node ~/meta-harness/installer/mh.mjs instalar --carpeta ~/proyectos/spring-petclinic
+node ~/meta-harness-factory/installer/mh.mjs instalar --carpeta ~/proyectos/spring-petclinic
 ```
 
 > [!info]- ¿Qué es `mh.mjs` y por qué se ejecuta con `node`?
-> **Node.js** es el entorno que ejecuta programas escritos en JavaScript fuera del navegador: para JavaScript es lo que la JVM para Java. La extensión **`.mjs`** indica un archivo JavaScript escrito como *módulo ES* (el sistema estándar de módulos, con `import`/`export`); Node.js lo ejecuta directamente, sin compilar ni instalar paquetes. *mh* son las iniciales de **meta-harness**. Se eligió Node.js porque funciona igual en Linux, macOS y Windows y los [hooks](../ayuda/glosario.md#hook) de Claude Code se escriben de forma natural en él; meta-harness no usa ningún paquete externo.
+> **Node.js** es el entorno que ejecuta programas escritos en JavaScript fuera del navegador: para JavaScript es lo que la JVM para Java. La extensión **`.mjs`** indica un archivo JavaScript escrito como *módulo ES* (el sistema estándar de módulos, con `import`/`export`); Node.js lo ejecuta directamente, sin compilar ni instalar paquetes. *mh* son las iniciales de **meta-harness-factory**. Se eligió Node.js porque funciona igual en Linux, macOS y Windows y los [hooks](../ayuda/glosario.md#hook) de Claude Code se escriben de forma natural en él; meta-harness-factory no usa ningún paquete externo.
 
 > [!tip] También puedes pedírselo a Claude
-> En una sesión de Claude Code dentro del proyecto: «instala **meta-harness** en este proyecto». El instalador le devuelve las preguntas que faltan y Claude **te las hace a ti**: tiene prohibido deducirlas del código.
+> En una sesión de Claude Code dentro del proyecto: «instala **meta-harness-factory** en este proyecto». El instalador le devuelve las preguntas que faltan y Claude **te las hace a ti**: tiene prohibido deducirlas del código.
 
 ## 3. Responde las preguntas
 | Pregunta | Opciones | Qué cambia |
@@ -44,7 +44,7 @@ node ~/meta-harness/installer/mh.mjs instalar --carpeta ~/proyectos/spring-petcl
 Este es el plan **real** para PetClinic con estas respuestas: técnico · otro · creciente · ramas y PR · Conventional Commits · ramas `{tipo}/{slug}` · sin gestor de tareas.
 
 ```text
-Plan de instalación 5499c298c74a · meta-harness 0.1.0 · proyecto petclinic · perfil standard
+Plan de instalación 5499c298c74a · meta-harness-factory 0.1.0 · proyecto petclinic · perfil standard
 
 Módulos:
   ✔ nucleo   seleccionado — siempre
@@ -79,7 +79,7 @@ Presupuesto siempre activo:
   8 skills automáticas (1927 caracteres de descripción) · subagentes 1515 car. · reglas siempre activas: 0
 
 No se ha escrito nada. Para aplicar exactamente este plan:
-  node ~/meta-harness/installer/mh.mjs instalar --carpeta ~/proyectos/spring-petclinic … --aceptar-plan 5499c298c74a
+  node ~/meta-harness-factory/installer/mh.mjs instalar --carpeta ~/proyectos/spring-petclinic … --aceptar-plan 5499c298c74a
 ```
 
 Cómo leerlo:
@@ -96,7 +96,7 @@ Cómo leerlo:
 ## 5. Acepta el plan
 Copia la orden que imprime el plan (incluye tus respuestas y el identificador):
 ```bash
-node ~/meta-harness/installer/mh.mjs instalar --carpeta ~/proyectos/spring-petclinic … --aceptar-plan 5499c298c74a
+node ~/meta-harness-factory/installer/mh.mjs instalar --carpeta ~/proyectos/spring-petclinic … --aceptar-plan 5499c298c74a
 ```
 ```text
 Plan 5499c298c74a aplicado: 39 elementos escritos; copia de seguridad en .mh/backups/….
@@ -122,8 +122,8 @@ spring-petclinic/
 
 ## 7. Comprueba y haz commit
 ```bash
-node ~/meta-harness/installer/mh.mjs comprobar --carpeta ~/proyectos/spring-petclinic
-git add -A && git commit -m "chore: instalar meta-harness"
+node ~/meta-harness-factory/installer/mh.mjs comprobar --carpeta ~/proyectos/spring-petclinic
+git add -A && git commit -m "chore: instalar meta-harness-factory"
 ```
 `comprobar` responde **LISTO** o **INCOMPLETO** con los motivos y mide el presupuesto real.
 
@@ -152,12 +152,12 @@ Abre la carpeta `brain/` como [bóveda](../ayuda/glosario.md#boveda) (no el repo
 Abre Claude Code en el proyecto. Antes de tu primer mensaje, el agente ya ha recibido una orientación breve:
 
 ```text
-[meta-harness] Carril de cada petición (anúncialo en una línea; el usuario puede corregirlo):
+[meta-harness-factory] Carril de cada petición (anúncialo en una línea; el usuario puede corregirlo):
 - Pide información → RESPONDER …
 - Cambio claro sin decisiones abiertas → FTD …
 - Decisiones abiertas, ambigüedad o riesgo 2 → ASDD …
 Rama: main
-Último en el brain: * Creación: brain inicializado por el meta-harness 0.1.0.
+Último en el brain: * Creación: brain inicializado por meta-harness-factory 0.1.0.
 ```
 
 Siguiente: [tu primer cambio](primer-ftd.md).

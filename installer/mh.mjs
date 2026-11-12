@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// meta-harness: instalador para Claude Code (primero el plan).
+// meta-harness-factory: instalador para Claude Code (primero el plan).
 //
 //   mh instalar    [--carpeta <dir>] [--nivel … --tipo … --objetivo "…" --alcance … --integracion …] [--modulos a,b] [--json]
 //   mh instalar    … --aceptar-plan <id>    aplica el plan exacto (si el proyecto cambió, no escribe nada)
@@ -55,7 +55,7 @@ const ICONO = { seleccionado: "✔", aplazado: "⏸", excluido: "✖" };
 
 export function mostrarPlan(plan, raiz) {
   const l = [];
-  l.push(`Plan de instalación ${plan.id} · meta-harness ${plan.version} · proyecto ${plan.proyecto} · perfil ${plan.perfil}`, "");
+  l.push(`Plan de instalación ${plan.id} · meta-harness-factory ${plan.version} · proyecto ${plan.proyecto} · perfil ${plan.perfil}`, "");
   l.push("Módulos:");
   for (const [id, d] of Object.entries(plan.modulos)) {
     l.push(`  ${ICONO[d.estado]} ${id.padEnd(8)} ${d.estado} — ${d.motivo}${d.reevaluarSi ? ` (se propondrá si ${d.reevaluarSi})` : ""}`);
@@ -157,7 +157,7 @@ function uninstall(raiz, confirmar) {
     .filter((s) => { const p = join(raiz, ".claude", "skills", s); try { return lstatSync(p).isSymbolicLink() && readlinkSync(p).includes(".mh/skills/"); } catch { return false; } });
   const skills = (cfg.plan?.skills || []).filter((s) => existsSync(join(raiz, ".claude", "skills", s)) && !enlaces.includes(s));
   const copias = Object.keys(cfg.gestionados || {}).filter((r) => r.startsWith(".claude/") && !r.startsWith(".claude/skills/"));
-  const lista = [".mh/", ".mh.json", ...[...enlaces, ...skills].map((s) => `.claude/skills/${s}/`), ...copias, "hooks del meta-harness en .claude/settings.json", "bloque <!-- mh --> de CLAUDE.md"];
+  const lista = [".mh/", ".mh.json", ...[...enlaces, ...skills].map((s) => `.claude/skills/${s}/`), ...copias, "hooks de meta-harness-factory en .claude/settings.json", "bloque <!-- mh --> de CLAUDE.md"];
   if (!confirmar) salir(0, `Se quitaría:\n  ${lista.join("\n  ")}\nNo se toca: brain/, init.sh ni el resto de CLAUDE.md. Repite con --confirmar para hacerlo.`);
   for (const s of enlaces) unlinkSync(join(raiz, ".claude", "skills", s));
   for (const s of skills) rmSync(join(raiz, ".claude", "skills", s), { recursive: true, force: true });
@@ -205,7 +205,7 @@ async function main() {
     case "actualizar": return sync(raiz);
     case "desinstalar": return uninstall(raiz, opts.banderas.has("confirmar"));
     default:
-      return salir(0, `meta-harness ${VERSION}\nÓrdenes: instalar · comprobar · reevaluar · actualizar · desinstalar (en inglés también: onboard · doctor · reassess · sync · uninstall)\nPreguntas de la instalación: ${PREGUNTAS.map((p) => p.id).join(", ")}`);
+      return salir(0, `meta-harness-factory ${VERSION}\nÓrdenes: instalar · comprobar · reevaluar · actualizar · desinstalar (en inglés también: onboard · doctor · reassess · sync · uninstall)\nPreguntas de la instalación: ${PREGUNTAS.map((p) => p.id).join(", ")}`);
   }
 }
 

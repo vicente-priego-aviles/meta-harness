@@ -253,7 +253,7 @@ def construir(spec):
     for i, el in enumerate(elementos):
         el["index"] = f"a{i:04d}"
     return {
-        "type": "excalidraw", "version": 2, "source": "meta-harness/diagrama.py",
+        "type": "excalidraw", "version": 2, "source": "meta-harness-factory/diagrama.py",
         "elements": elementos,
         "appState": {"viewBackgroundColor": "#ffffff", "gridSize": 20},
         "files": {},

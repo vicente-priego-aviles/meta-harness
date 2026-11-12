@@ -7,7 +7,7 @@ hide:
 
 <div class="mh-hero" markdown>
 
-# meta-harness
+# meta-harness-factory
 
 <p class="mh-lema">Tu software factory con Claude Code: memoria en Obsidian, procesos que se cumplen y menos tokens.</p>
 
@@ -15,7 +15,7 @@ hide:
 
 </div>
 
-Un modelo de IA sin nada alrededor empieza cada sesión sin memoria, rellena huecos con suposiciones y da por terminado lo que no está probado. **meta-harness** monta en cada proyecto, a medida, lo que Claude Code necesita para trabajar como una pequeña factoría de software: memoria del proyecto, carriles de trabajo, revisores, controles automáticos y un presupuesto de contexto medido.
+Un modelo de IA sin nada alrededor empieza cada sesión sin memoria, rellena huecos con suposiciones y da por terminado lo que no está probado. **meta-harness-factory** monta en cada proyecto, a medida, lo que Claude Code necesita para trabajar como una pequeña factoría de software: memoria del proyecto, carriles de trabajo, revisores, controles automáticos y un presupuesto de contexto medido.
 
 <div class="grid cards mh-dos" markdown>
 
@@ -55,7 +55,7 @@ Un modelo de IA sin nada alrededor empieza cada sesión sin memoria, rellena hue
 
 ## Cómo encaja
 
-![Arquitectura: del meta-harness al proyecto](assets/diagramas/arquitectura.svg){ .mh-diagrama }
+![Arquitectura: de meta-harness-factory al proyecto](assets/diagramas/arquitectura.svg){ .mh-diagrama }
 
 El **catálogo** contiene skills, subagentes, hooks, reglas y plantillas. El **instalador** te hace unas preguntas (el tipo de proyecto, cómo trabajas con git, tu gestor de tareas…), analiza tu proyecto y te enseña un plan; solo cuando lo aceptas copia al proyecto las piezas elegidas.
 

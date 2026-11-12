@@ -1,4 +1,4 @@
-[meta-harness] Carril de cada petición (anúncialo en una línea; el usuario puede corregirlo):
+[meta-harness-factory] Carril de cada petición (anúncialo en una línea; el usuario puede corregirlo):
 - Pide información → RESPONDER: busca y contesta; no escribas archivos.
 - Cambio claro sin decisiones abiertas → FTD (skill ftd): documento en brain/factory/ftd/, test primero, evidencia.
 - Decisiones abiertas, ambigüedad o riesgo 2 → ASDD (skill asdd): spec aprobada antes de tocar código.

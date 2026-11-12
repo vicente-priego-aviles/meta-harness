@@ -86,16 +86,16 @@ Un FTD no se cierra con «tests en verde», sino con **evidencia**, y lo que no 
 Tres cosas que el agente **no** hizo: marcar como hecho lo que estaba en rojo, desactivar el test para que pasara y decir «pasado» de un control que no ejecutó. La constitución del proyecto lo prohíbe, y los revisores lo comprueban.
 
 ## Cuánto cuesta
-| Tarea | Sin [meta-harness](../ayuda/glosario.md#meta-harness) | Con meta-harness |
+| Tarea | Sin [meta-harness-factory](../ayuda/glosario.md#meta-harness) | Con meta-harness-factory |
 |---|---|---|
 | Test de arquitectura (proyecto de reservas de viaje) | 0,167 USD | 0,193 USD (+16 %) |
 | Cambio en PetClinic, con revisor | — | 0,36 USD |
 
-Con **meta-harness** el FTD cuesta algo más, porque el agente escribe el documento y la evidencia y, con riesgo 1, lanza un revisor. A cambio, queda constancia de qué se hizo y cómo se comprobó, y un segundo par de ojos que no vio escribir el código.
+Con **meta-harness-factory** el FTD cuesta algo más, porque el agente escribe el documento y la evidencia y, con riesgo 1, lanza un revisor. A cambio, queda constancia de qué se hizo y cómo se comprobó, y un segundo par de ojos que no vio escribir el código.
 
 Las cifras son lo que Claude Code informa al terminar, calculado con las tarifas de la API de Anthropic. En las dos pruebas trabajó **Sonnet 5.5**, tanto el agente principal como el revisor. Para hacerte una idea, estas son las tarifas por millón de [tokens](../ayuda/glosario.md#token) (noviembre de 2026):
 
-| Modelo | Entrada | Salida | Lectura de caché | En meta-harness |
+| Modelo | Entrada | Salida | Lectura de caché | En meta-harness-factory |
 |---|---|---|---|---|
 | Haiku 5.5 | 0,10 USD | 0,50 USD | — | [subagentes](../ayuda/glosario.md#subagente) de tareas mecánicas: `explorador`, `ejecutor-tests` |
 | Sonnet 5.5 | 2 USD | 10 USD | 0,10 USD | el modelo de las pruebas; desarrollador y revisores |

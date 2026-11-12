@@ -23,7 +23,7 @@ function escribir(base, ruta, txt) {
   writeFileSync(join(base, ruta), txt);
 }
 
-/** Proyecto de prueba: repo git con main y el meta-harness "instalado" en .mh/ */
+/** Proyecto de prueba: repo git con main y meta-harness-factory "instalado" en .mh/ */
 function proyecto() {
   const dir = mkdtempSync(join(tmpdir(), "mh-test-"));
   sh(dir, "init", "-q", "-b", "main");
@@ -38,7 +38,7 @@ function proyecto() {
   cpSync(join(CAT, "always-on/orientacion.md"), join(dir, ".mh/orientacion.md"));
   escribir(dir, ".gitignore", ".mh/tmp/\n");
   sh(dir, "add", "-A");
-  sh(dir, "commit", "-qm", "meta-harness instalado");
+  sh(dir, "commit", "-qm", "meta-harness-factory instalado");
   return dir;
 }
 

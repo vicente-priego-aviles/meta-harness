@@ -1,12 +1,12 @@
 # Mantenimiento
 
-Una vez instalado, **[meta-harness](../ayuda/glosario.md#meta-harness)** casi no pide atención. Esta página explica las cuatro tareas de mantenimiento que puedes necesitar: comprobar la instalación, añadir módulos cuando el proyecto cambia, actualizar a una versión nueva del catálogo y desinstalar. Todas se hacen con el instalador (opciones completas en la [referencia](../referencia/instalador.md)).
+Una vez instalado, **[meta-harness-factory](../ayuda/glosario.md#meta-harness)** casi no pide atención. Esta página explica las cuatro tareas de mantenimiento que puedes necesitar: comprobar la instalación, añadir módulos cuando el proyecto cambia, actualizar a una versión nueva del catálogo y desinstalar. Todas se hacen con el instalador (opciones completas en la [referencia](../referencia/instalador.md)).
 
 ```bash
-node ~/meta-harness/installer/mh.mjs <orden> --carpeta ~/proyectos/mi-proyecto
+node ~/meta-harness-factory/installer/mh.mjs <orden> --carpeta ~/proyectos/mi-proyecto
 ```
 
-Sin `--carpeta`, actúa sobre la carpeta en la que estás. También puedes pedírselo al agente: «comprueba la instalación de meta-harness».
+Sin `--carpeta`, actúa sobre la carpeta en la que estás. También puedes pedírselo al agente: «comprueba la instalación de meta-harness-factory».
 
 ## Comprobar que todo está bien
 ```bash
@@ -49,13 +49,13 @@ mh reevaluar
 Módulos que ahora tienen señales (no se ha instalado nada):
   + camunda — 1 modelo BPMN/DMN
 
-Para verlos en un plan: node ~/meta-harness/installer/mh.mjs instalar --carpeta ~/proyectos/mi-proyecto --modulos java,ddd,camunda
+Para verlos en un plan: node ~/meta-harness-factory/installer/mh.mjs instalar --carpeta ~/proyectos/mi-proyecto --modulos java,ddd,camunda
 ```
 
 La orden que imprime enseña el plan completo con el módulo nuevo; como siempre, no se aplica hasta que lo aceptas con `--aceptar-plan`. El hook de arranque solo mira señales baratas (archivos de build y sus dependencias, la carpeta `.git`): no recorre el proyecto en cada sesión.
 
 ## Actualizar a una versión nueva del catálogo
-Cuando actualices tu copia de meta-harness (por ejemplo, con `git pull`), lleva los cambios a cada proyecto:
+Cuando actualices tu copia de meta-harness-factory (por ejemplo, con `git pull`), lleva los cambios a cada proyecto:
 
 ```bash
 mh actualizar
@@ -68,7 +68,7 @@ mh actualizar
 - Guarda en `.mh/backups/` una copia de todo lo que sobrescribe.
 
 > [!warning] Los cambios a mano en piezas instaladas se pierden
-> Si editaste una skill, un subagente o un hook instalado, `mh actualizar` lo devuelve a la versión del catálogo (con copia en `.mh/backups/`). Antes de actualizar, mira el aviso de `mh comprobar`. Lo que quieras adaptar de forma duradera va en `.mh.json`; si una pieza del catálogo no te sirve, mejor proponer el cambio en meta-harness.
+> Si editaste una skill, un subagente o un hook instalado, `mh actualizar` lo devuelve a la versión del catálogo (con copia en `.mh/backups/`). Antes de actualizar, mira el aviso de `mh comprobar`. Lo que quieras adaptar de forma duradera va en `.mh.json`; si una pieza del catálogo no te sirve, mejor proponer el cambio en meta-harness-factory.
 
 Después, revisa el cambio con `git diff` y haz commit. Recuerda que `.claude/` y `.mh/` son [riesgo](../ayuda/glosario.md#riesgo) 2: súbelo en su propio commit o [PR](../ayuda/glosario.md#pr), antes de abrir ramas de trabajo.
 
@@ -78,7 +78,7 @@ mh desinstalar               # enseña lo que quitaría
 mh desinstalar --confirmar   # lo quita
 ```
 
-Quita `.mh/`, `.mh.json`, las skills, subagentes y reglas instalados, los hooks de meta-harness en `.claude/settings.json` y el bloque `<!-- mh:inicio -->…<!-- mh:fin -->` de `CLAUDE.md`. **No toca** el [brain](../ayuda/glosario.md#brain), `init.sh` ni el resto de `CLAUDE.md`: la memoria del proyecto es tuya y sigue sirviendo sin meta-harness.
+Quita `.mh/`, `.mh.json`, las skills, subagentes y reglas instalados, los hooks de meta-harness-factory en `.claude/settings.json` y el bloque `<!-- mh:inicio -->…<!-- mh:fin -->` de `CLAUDE.md`. **No toca** el [brain](../ayuda/glosario.md#brain), `init.sh` ni el resto de `CLAUDE.md`: la memoria del proyecto es tuya y sigue sirviendo sin meta-harness-factory.
 
 ## Mantener el brain
 El brain también necesita un repaso de vez en cuando. Pídeselo al agente:

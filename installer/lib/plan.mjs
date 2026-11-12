@@ -57,7 +57,7 @@ function componentes(raiz, modulos, manifiesto) {
     }
     for (const a of m.agentes || []) {
       const destino = join(raiz, ".claude", "agents", `${a}.md`);
-      const propio = existe(destino) && !leer(destino).includes("meta-harness") && !leer(join(raiz, ".mh.json")).includes(`"${a}"`);
+      const propio = existe(destino) && !leer(destino).includes("meta-harness") /* también vale para «meta-harness-factory» y para lo instalado antes del renombre */ && !leer(join(raiz, ".mh.json")).includes(`"${a}"`);
       out.agentes.push(propio ? { id: a, modulo: id, estado: "excluido", motivo: "ya existe un agente propio con ese nombre" }
         : { id: a, modulo: id, estado: "seleccionado" });
     }
@@ -118,7 +118,7 @@ function avisos(esc) {
         : "Tras instalar, pide al agente mover el detalle a skills, reglas o al brain." });
   }
   if (esc.skillsAgents.length) out.push({ id: "skills-agents", texto: `Hay ${esc.skillsAgents.length} skills en .agents/skills/. Según la documentación de Claude Code, no las carga desde esa carpeta (sí otros agentes).`,
-    sugerencia: "No se tocan. Si quieres alguna en Claude Code, evalúala antes: puede solaparse con las del meta-harness (p. ej. las de Camunda ya están como referencia oficial)." });
+    sugerencia: "No se tocan. Si quieres alguna en Claude Code, evalúala antes: puede solaparse con las de meta-harness-factory (p. ej. las de Camunda ya están como referencia oficial)." });
   if (esc.build && esc.tests === 0) out.push({ id: "sin-tests", texto: "No hay tests en src/test: la constitución exige TDD y evidencia.",
     sugerencia: esc.señales.archunit ? "Primera tarea FTD sugerida: el test de arquitectura (plantilla en la skill ddd-hexagonal)." : "Primera tarea FTD sugerida: un test de humo del arranque." });
   if (esc.build === "maven" && !esc.mvnw) out.push({ id: "sin-mvnw", texto: "No hay Maven Wrapper (mvnw): mvnq usará el mvn del sistema.", sugerencia: "mvn wrapper:wrapper" });

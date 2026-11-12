@@ -1,5 +1,5 @@
 {
-  "name": "meta-harness",
+  "name": "meta-harness-factory",
   "version": "0.1.0",
   "description": "Meta-harness para Claude Code: software factory con brain en Obsidian y ahorro de tokens",
   "type": "module",

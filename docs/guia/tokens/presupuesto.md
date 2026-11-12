@@ -1,6 +1,6 @@
 # Presupuesto y medidas
 
-Lo que está **siempre cargado** se paga en cada mensaje de cada sesión. Por eso **[meta-harness](../ayuda/glosario.md#meta-harness)** le pone un presupuesto con límites concretos, lo enseña en el plan antes de instalar y lo mide después en tu proyecto.
+Lo que está **siempre cargado** se paga en cada mensaje de cada sesión. Por eso **[meta-harness-factory](../ayuda/glosario.md#meta-harness)** le pone un presupuesto con límites concretos, lo enseña en el plan antes de instalar y lo mide después en tu proyecto.
 
 ## El presupuesto
 | Pieza | Límite | Cómo se cumple |
@@ -25,8 +25,8 @@ Si algo se pasa del límite, lo dice como aviso: un `CLAUDE.md` de más de 120 l
 
 Dentro de una sesión, `/context` enseña qué ocupa el contexto en ese momento: instrucciones fijas, herramientas, skills, archivos leídos y conversación.
 
-## El coste fijo que no viene de meta-harness
-En el piloto, lo fijo que añadía **meta-harness** eran unos 10.000 caracteres (≈ 3.000 [tokens](../ayuda/glosario.md#token)) entre skills, [subagentes](../ayuda/glosario.md#subagente), hooks y reglas. El **mayor coste fijo** era otro: las skills globales del usuario y las de los plugins instalados, unos 19.400 caracteres (≈ 5.000 tokens) **en cada petición** y en cualquier proyecto.
+## El coste fijo que no viene de meta-harness-factory
+En el piloto, lo fijo que añadía **meta-harness-factory** eran unos 10.000 caracteres (≈ 3.000 [tokens](../ayuda/glosario.md#token)) entre skills, [subagentes](../ayuda/glosario.md#subagente), hooks y reglas. El **mayor coste fijo** era otro: las skills globales del usuario y las de los plugins instalados, unos 19.400 caracteres (≈ 5.000 tokens) **en cada petición** y en cualquier proyecto.
 
 > [!tip] Revisa tus skills globales
 > Cada skill de `~/.claude/skills/` y de cada plugin activo carga su descripción en todas las sesiones, la uses o no. Si tienes muchas, desactiva los plugins que no uses en este proyecto o mueve las skills que solo sirven para un proyecto a su `.claude/skills/`.
@@ -35,7 +35,7 @@ En el piloto, lo fijo que añadía **meta-harness** eran unos 10.000 caracteres 
 - **`/clear` al cambiar de tarea.** El brain guarda lo importante y la sesión nueva arranca orientada; seguir en la misma sesión arrastra todo lo leído antes.
 - **Una tarea larga, una sesión.** Al revés que el punto anterior: si vas a seguir con lo mismo, no cierres y retomes. Retomar una sesión vuelve a cargar todo su contexto (en el tutorial, la misma tarea costó 0,36 USD de una vez y 0,44 USD más al retomarla para el commit).
 - **Pregunta antes de pedir cambios.** Una pregunta ([carril](../ayuda/glosario.md#carril) Responder) es barata y evita un cambio mal planteado.
-- **Deja que compacte.** meta-harness configura la [compactación](../ayuda/glosario.md#compactacion) automática al 65 % del contexto (`CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` en `.claude/settings.json`) y el hook de compactación le dice al resumen qué conservar: carril, documento, tarea y decisiones.
+- **Deja que compacte.** meta-harness-factory configura la [compactación](../ayuda/glosario.md#compactacion) automática al 65 % del contexto (`CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` en `.claude/settings.json`) y el hook de compactación le dice al resumen qué conservar: carril, documento, tarea y decisiones.
 
 ## Medidas opcionales
 Probadas o valoradas, pero no activadas por defecto:

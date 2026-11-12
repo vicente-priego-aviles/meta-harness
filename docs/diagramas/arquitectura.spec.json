@@ -1,6 +1,6 @@
 {
- "titulo": "Arquitectura: del meta-harness al proyecto",
- "descripcion": "Qué contiene el meta-harness y qué instala en cada proyecto. Ver [arquitectura](../01-arquitectura.md).",
+ "titulo": "Arquitectura: de meta-harness-factory al proyecto",
+ "descripcion": "Qué contiene meta-harness-factory y qué instala en cada proyecto. Ver [arquitectura](../01-arquitectura.md).",
  "tags": [
   "arquitectura"
  ],
@@ -157,7 +157,7 @@
  ],
  "grupos": [
   {
-   "texto": "Repo meta-harness",
+   "texto": "Repo meta-harness-factory",
    "nodos": [
     "catalogo",
     "manifiestos",
@@ -192,7 +192,7 @@
  "leyenda": [
   {
    "color": "azul",
-   "texto": "catálogo del meta-harness"
+   "texto": "catálogo de meta-harness-factory"
   },
   {
    "color": "amarillo",

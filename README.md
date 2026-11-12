@@ -1,8 +1,8 @@
-# meta-harness
+# meta-harness-factory
 
 Tu software factory con **Claude Code**: memoria del proyecto en **Obsidian**, procesos que se cumplen y menos tokens.
 
-**meta-harness** monta en cada proyecto, a medida, lo que Claude Code necesita para trabajar con método:
+**meta-harness-factory** monta en cada proyecto, a medida, lo que Claude Code necesita para trabajar con método:
 
 - **Tres carriles de trabajo**: responder preguntas, **FTD** para cambios claros y **ASDD** para cambios con decisiones, con tu aprobación en los puntos clave.
 - **Brain**: la memoria del proyecto en `brain/`, una bóveda de Obsidian versionada con el código (decisiones, specs, evidencias, lecciones).
@@ -16,13 +16,13 @@ Pensado para proyectos **Java con Spring Boot**, **DDD hexagonal**, **Camunda 8 
 Requisitos: Claude Code, Node.js 18 o posterior, git y Python 3.
 
 ```bash
-git clone https://github.com/vicente-priego-aviles/meta-harness.git ~/meta-harness
-node ~/meta-harness/installer/mh.mjs instalar --carpeta ~/proyectos/mi-proyecto
+git clone https://github.com/vicente-priego-aviles/meta-harness-factory.git ~/meta-harness-factory
+node ~/meta-harness-factory/installer/mh.mjs instalar --carpeta ~/proyectos/mi-proyecto
 ```
 
-El instalador te hace unas preguntas, analiza el proyecto y te enseña un plan; no escribe nada hasta que lo aceptas. También puedes pedírselo a Claude Code desde el proyecto: «instala meta-harness en este proyecto».
+El instalador te hace unas preguntas, analiza el proyecto y te enseña un plan; no escribe nada hasta que lo aceptas. También puedes pedírselo a Claude Code desde el proyecto: «instala meta-harness-factory en este proyecto».
 
-La **guía** completa (tutorial con Spring PetClinic, uso diario, arquitectura, referencia) está en **https://vicente-priego-aviles.github.io/meta-harness/** y en `docs/guia/`. Para verla en local:
+La **guía** completa (tutorial con Spring PetClinic, uso diario, arquitectura, referencia) está en **https://vicente-priego-aviles.github.io/meta-harness-factory/** y en `docs/guia/`. Para verla en local:
 
 ```bash
 python3 -m venv .venv-docs && .venv-docs/bin/pip install -r requirements-docs.txt

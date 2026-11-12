@@ -53,7 +53,7 @@ Operadores `== != > < >= <= && || !`. Funciones: `file.inFolder("x")`, `file.has
 - Propiedad que puede faltar → protégela con `if()`.
 - `formula.X` en `order` sin definir `X` → falla en silencio.
 
-## Tableros típicos del meta-harness
+## Tableros típicos de meta-harness-factory
 | Tablero | Filtro clave |
 |---|---|
 | Conocimiento por tipo | `file.inFolder("<brain>/wiki")`, `groupBy: type` |
@@ -61,4 +61,4 @@ Operadores `== != > < >= <= && || !`. Funciones: `file.inFolder("x")`, `file.has
 | Caducadas | `'if(stale_after, date(stale_after) < now(), false)'` |
 | ADRs | `type == "ADR"`, orden por `file.name` |
 | Specs y FTD | `type == "Spec" \|\| type == "FTD"`, `groupBy: status` |
-Ejemplo real: `docs/tableros/conocimiento.base` del repo meta-harness.
+Ejemplo real: `docs/tableros/conocimiento.base` del repo meta-harness-factory.

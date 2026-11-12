@@ -7,7 +7,7 @@ tags: [stack, camunda, bpmn, procesos]
 
 # Camunda 8
 
-Convenciones del meta-harness sobre Camunda 8.8+ con `camunda-spring-boot-starter` (Spring Boot 4; con Spring Boot 3.5 el puente es `camunda-spring-boot-3-starter`). El detalle de API lo da la **documentación oficial de Camunda**, instalada como referencia en `.mh/vendor/camunda/` (léela solo cuando la necesites):
+Convenciones de meta-harness-factory sobre Camunda 8.8+ con `camunda-spring-boot-starter` (Spring Boot 4; con Spring Boot 3.5 el puente es `camunda-spring-boot-3-starter`). El detalle de API lo da la **documentación oficial de Camunda**, instalada como referencia en `.mh/vendor/camunda/` (léela solo cuando la necesites):
 
 | Necesitas… | Lee |
 |---|---|

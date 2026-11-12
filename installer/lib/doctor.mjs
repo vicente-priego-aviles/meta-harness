@@ -8,7 +8,7 @@ export function doctor(raiz) {
   const errores = [];
   const avisos = [];
   const cfgTxt = leer(join(raiz, ".mh.json"), null);
-  if (cfgTxt === null) return { estado: "INCOMPLETO", errores: ["Falta .mh.json: el meta-harness no está instalado (mh instalar)."], avisos, presupuesto: null };
+  if (cfgTxt === null) return { estado: "INCOMPLETO", errores: ["Falta .mh.json: meta-harness-factory no está instalado (mh instalar)."], avisos, presupuesto: null };
   let cfg;
   try { cfg = JSON.parse(cfgTxt); } catch { return { estado: "INCOMPLETO", errores: [".mh.json no es JSON válido."], avisos, presupuesto: null }; }
 

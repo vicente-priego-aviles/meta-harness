@@ -1,6 +1,6 @@
 # La salida de Maven (mvnq)
 
-Cada vez que el agente compila o lanza los tests, **lee toda la salida del comando**, y todo lo que lee ocupa contexto y cuesta [tokens](../ayuda/glosario.md#token). Maven es muy hablador: descargas, plugins, una línea por cada fase de cada módulo, trazas de cien líneas… Casi nada de eso le sirve al agente para decidir qué hacer. `mvnq` es el envoltorio de **[meta-harness](../ayuda/glosario.md#meta-harness)** que ejecuta Maven y le enseña solo lo que importa. La *q* viene de *quiet*, «silencioso».
+Cada vez que el agente compila o lanza los tests, **lee toda la salida del comando**, y todo lo que lee ocupa contexto y cuesta [tokens](../ayuda/glosario.md#token). Maven es muy hablador: descargas, plugins, una línea por cada fase de cada módulo, trazas de cien líneas… Casi nada de eso le sirve al agente para decidir qué hacer. `mvnq` es el envoltorio de **[meta-harness-factory](../ayuda/glosario.md#meta-harness)** que ejecuta Maven y le enseña solo lo que importa. La *q* viene de *quiet*, «silencioso».
 
 ## Cuánto ahorra (medido en PetClinic)
 El mismo `verify` de Spring PetClinic (84 tests), lanzado con Maven a pelo y con `mvnq`:

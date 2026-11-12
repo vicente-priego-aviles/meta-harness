@@ -7,7 +7,7 @@ tags: [stack, ddd, hexagonal, arquitectura, jmolecules]
 
 # DDD táctico y arquitectura hexagonal
 
-## Estructura de paquetes (convención del meta-harness, en español)
+## Estructura de paquetes (convención de meta-harness-factory, en español)
 ```
 <contexto>/
 ├── dominio/                 modelo/{agregado,entidad,objetovalor} · servicio · repositorio (interfaces) · evento · excepcion

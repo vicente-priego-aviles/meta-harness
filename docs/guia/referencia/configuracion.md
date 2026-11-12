@@ -1,6 +1,6 @@
 # Configuración (.mh.json)
 
-`.mh.json`, en la raíz del proyecto, guarda la configuración de **[meta-harness](../ayuda/glosario.md#meta-harness)** en ese proyecto: tus respuestas al instalar, lo que se instaló y los ajustes de los [hooks](../ayuda/glosario.md#hook). Lo crea el instalador y se versiona con el código.
+`.mh.json`, en la raíz del proyecto, guarda la configuración de **[meta-harness-factory](../ayuda/glosario.md#meta-harness)** en ese proyecto: tus respuestas al instalar, lo que se instaló y los ajustes de los [hooks](../ayuda/glosario.md#hook). Lo crea el instalador y se versiona con el código.
 
 > [!warning] Es un archivo de riesgo 2
 > Cambiar `.mh.json` es cambiar las reglas del agente: el agente te pedirá confirmación antes de editarlo, y un cambio en él cuenta como [riesgo](../ayuda/glosario.md#riesgo) 2 para la puerta de `git push`. Si lo cambias tú, súbelo en su propio commit.
@@ -72,6 +72,6 @@ No los edites a mano: los usa el instalador para saber qué hay instalado.
 |---|---|
 | `version` | versión del catálogo instalada |
 | `plan` | id del plan aceptado, fecha, tus respuestas, módulos, [skills](../ayuda/glosario.md#skill), [subagentes](../ayuda/glosario.md#subagente), reglas y referencias instalados, y `vigilar`: las señales de los módulos que no se instalaron, que el hook de arranque comprueba para avisarte |
-| `gestionados` | cada archivo que instaló meta-harness con su huella (hash): así `mh comprobar` detecta los que se han cambiado a mano y `mh desinstalar` sabe qué quitar |
+| `gestionados` | cada archivo que instaló meta-harness-factory con su huella (hash): así `mh comprobar` detecta los que se han cambiado a mano y `mh desinstalar` sabe qué quitar |
 
 Al reinstalar o actualizar, el instalador **conserva** tus ajustes (`perfil`, `desactivados`, `protegidos`, `riesgo`, `git`, `tareas`) y solo rehace `version`, `plan` y `gestionados`.

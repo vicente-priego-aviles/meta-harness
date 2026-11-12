@@ -1,10 +1,10 @@
-site_name: meta-harness
+site_name: meta-harness-factory
 site_description: Software factory con Claude Code, memoria en Obsidian y ahorro de tokens
 docs_dir: docs/guia
 site_dir: site
-site_url: https://vicente-priego-aviles.github.io/meta-harness/
-repo_url: https://github.com/vicente-priego-aviles/meta-harness
-repo_name: meta-harness
+site_url: https://vicente-priego-aviles.github.io/meta-harness-factory/
+repo_url: https://github.com/vicente-priego-aviles/meta-harness-factory
+repo_name: meta-harness-factory
 
 theme:
   name: material

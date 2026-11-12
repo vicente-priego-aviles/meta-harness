@@ -55,4 +55,4 @@ Una **[skill](../ayuda/glosario.md#skill)** es un archivo de instrucciones (`SKI
 Cada descripción mide 300 caracteres como mucho y un proyecto no pasa de 12 skills automáticas: las descripciones se cargan en cada sesión. Con todos los módulos instalados quedan justo 12 automáticas (y las de `paths` solo se ofrecen al tocar sus archivos). `mh comprobar` mide las de tu proyecto.
 
 > [!info] Origen
-> Varias skills están adaptadas de proyectos abiertos con licencia MIT: `brain`, `obsidian-markdown`, `obsidian-bases`, `defuddle`, `excalidraw`, `interrogar`, `git`, `release` y las reglas de Mermaid de `secuencia`. Los proyectos de origen, sus autores y sus licencias están en el archivo `AVISOS-DE-TERCEROS.md` del repositorio de [meta-harness](../ayuda/glosario.md#meta-harness).
+> Varias skills están adaptadas de proyectos abiertos con licencia MIT: `brain`, `obsidian-markdown`, `obsidian-bases`, `defuddle`, `excalidraw`, `interrogar`, `git`, `release` y las reglas de Mermaid de `secuencia`. Los proyectos de origen, sus autores y sus licencias están en el archivo `AVISOS-DE-TERCEROS.md` del repositorio de [meta-harness-factory](../ayuda/glosario.md#meta-harness).

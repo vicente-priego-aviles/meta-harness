@@ -1,4 +1,4 @@
 # Registro
 
 ## {{FECHA}}
-* **Creación**: brain inicializado por el meta-harness {{VERSION}}.
+* **Creación**: brain inicializado por meta-harness-factory {{VERSION}}.

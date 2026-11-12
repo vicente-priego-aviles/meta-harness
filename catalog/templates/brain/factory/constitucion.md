@@ -3,7 +3,7 @@ type: Constitución
 title: Constitución de {{NOMBRE}}
 description: Reglas fijas del proyecto y definición de terminado; cambiarlas requiere confirmación.
 tags: [constitucion, factoria]
-generated: { by: meta-harness, at: {{FECHA}} }
+generated: { by: meta-harness-factory, at: {{FECHA}} }
 status: draft
 ---
 

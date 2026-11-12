@@ -44,7 +44,7 @@ TERMINOS = {
     "ADR": r"\bADRs?\b(?!-)",
     "LLM": r"\bLLMs?\b",
     "Harness": r"(?<![-\w])harness\b",
-    "Meta-harness": r"\bmeta-harness\b",
+    "Meta-harness": r"\bmeta-harness-factory\b",
     "Skill": r"\bskills?\b",
     "Subagente": r"\bsubagentes?\b",
     "Hook": r"\bhooks?\b",

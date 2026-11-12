@@ -2,7 +2,7 @@
 name: brain
 description: Mantiene el brain del proyecto (raw/ inmutable + wiki/ del agente, Obsidian). Úsala para ingerir una fuente, consultar qué sabemos, guardar una decisión o lección («recuérdalo») o hacer lint del brain. No para specs o FTD.
 tags: [brain, obsidian, conocimiento, okf, llm-wiki]
-origen: "Adaptada de una skill con licencia MIT; ver AVISOS-DE-TERCEROS.md; formato OKF y convenciones del meta-harness"
+origen: "Adaptada de una skill con licencia MIT; ver AVISOS-DE-TERCEROS.md; formato OKF y convenciones de meta-harness-factory"
 ---
 
 # Brain

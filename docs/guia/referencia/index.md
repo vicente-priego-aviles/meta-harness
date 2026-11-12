@@ -1,6 +1,6 @@
 # Referencia
 
-Esta sección es para **consultar**, no para leer de corrido: la lista completa de piezas que **[meta-harness](../ayuda/glosario.md#meta-harness)** puede instalar en un proyecto, con su nombre exacto, qué hacen y cómo se configuran. Si buscas el porqué de cada pieza, está en [Arquitectura](../arquitectura/index.md).
+Esta sección es para **consultar**, no para leer de corrido: la lista completa de piezas que **[meta-harness-factory](../ayuda/glosario.md#meta-harness)** puede instalar en un proyecto, con su nombre exacto, qué hacen y cómo se configuran. Si buscas el porqué de cada pieza, está en [Arquitectura](../arquitectura/index.md).
 
 | Página | Qué encontrarás |
 |---|---|

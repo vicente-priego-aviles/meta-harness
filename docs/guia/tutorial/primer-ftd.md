@@ -1,6 +1,6 @@
 # Tu primer cambio (FTD)
 
-**[meta-harness](../ayuda/glosario.md#meta-harness)** organiza el trabajo en tres **[carriles](../ayuda/glosario.md#carril)**: caminos de trabajo con sus pasos fijos, como los carriles de una autopista. El agente elige uno según lo clara que esté la petición, te lo dice en una línea y tú puedes corregirlo. Un **[FTD](../ayuda/glosario.md#ftd)** (*Fast Track Development*, «desarrollo por la vía rápida») es el carril para cambios **claros y sin decisiones abiertas**: corregir un fallo acotado, quitar una duplicación, añadir un campo. Aquí lo recorres entero con un cambio **real** en Spring PetClinic; todo lo que ves en esta página salió de esa ejecución.
+**[meta-harness-factory](../ayuda/glosario.md#meta-harness)** organiza el trabajo en tres **[carriles](../ayuda/glosario.md#carril)**: caminos de trabajo con sus pasos fijos, como los carriles de una autopista. El agente elige uno según lo clara que esté la petición, te lo dice en una línea y tú puedes corregirlo. Un **[FTD](../ayuda/glosario.md#ftd)** (*Fast Track Development*, «desarrollo por la vía rápida») es el carril para cambios **claros y sin decisiones abiertas**: corregir un fallo acotado, quitar una duplicación, añadir un campo. Aquí lo recorres entero con un cambio **real** en Spring PetClinic; todo lo que ves en esta página salió de esa ejecución.
 
 ## El cambio
 En PetClinic, la comprobación de que **la fecha de nacimiento de una mascota no está en el futuro** está duplicada en `PetController`, una vez en el alta y otra en la edición. Lo natural es que viva en `PetValidator`, junto al resto de validaciones de la mascota.
@@ -112,5 +112,5 @@ El código, los tests y los documentos del [brain](../ayuda/glosario.md#brain) v
 
 Medido con Sonnet 5.5 a tarifas de la API ([qué significa ese precio](../uso/ftd.md#cuanto-cuesta)). Retomar una sesión vuelve a cargar todo su contexto; hacerlo todo en la misma conversación sale más barato. Más datos en [ahorro de tokens](../tokens/index.md).
 
-> [!success] Ya sabes trabajar con **meta-harness**
+> [!success] Ya sabes trabajar con **meta-harness-factory**
 > Lo siguiente: los [carriles de uso diario](../uso/index.md) en detalle, sobre todo **ASDD** para cambios con decisiones.

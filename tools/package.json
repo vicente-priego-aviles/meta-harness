@@ -1,5 +1,5 @@
 {
-  "name": "meta-harness-tools",
+  "name": "meta-harness-factory-tools",
   "private": true,
   "type": "module",
   "description": "Herramientas de desarrollo del repo (no se instalan en los proyectos)",

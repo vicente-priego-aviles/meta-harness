@@ -61,7 +61,7 @@ skill revision. Si crees que la tabla de riesgo se equivoca, díselo al usuario:
 Los hooks solo actúan sobre lo que hace el agente: en tu terminal, `git push` funciona como siempre.
 
 > [!warning] Sube la instalación antes de abrir ramas de trabajo
-> La instalación de **[meta-harness](../ayuda/glosario.md#meta-harness)** cambia `.claude/` y `.mh/`, que son riesgo 2. Si el commit de la instalación no está en la rama base del remoto, cada rama nueva lo arrastra y su riesgo sale 2. Súbelo tú (o con su propio PR) antes de empezar a trabajar: el agente no puede hacerlo sin una spec, precisamente porque toca la configuración del agente.
+> La instalación de **[meta-harness-factory](../ayuda/glosario.md#meta-harness)** cambia `.claude/` y `.mh/`, que son riesgo 2. Si el commit de la instalación no está en la rama base del remoto, cada rama nueva lo arrastra y su riesgo sale 2. Súbelo tú (o con su propio PR) antes de empezar a trabajar: el agente no puede hacerlo sin una spec, precisamente porque toca la configuración del agente.
 
 ## Ajustar la tabla a tu proyecto
 La tabla se amplía en `.mh.json`:

@@ -4,7 +4,7 @@
 - catalog/templates/brain/wiki/factoria/glosario.md: el de cada proyecto instalado.
 - docs/guia/ayuda/glosario.md: la página «Glosario» de la guía web.
 
-Quita los enlaces que apuntan a documentos del meta-harness (fuera del repo, o de la web, no existirían) y adapta un par de frases.
+Quita los enlaces que apuntan a documentos de meta-harness-factory (fuera del repo, o de la web, no existirían) y adapta un par de frases.
 Uso: python3 -I tools/generar-glosario-factoria.py   (desde la raíz del repo)
 Un test (tests/catalogo) comprueba que las tres versiones tienen los mismos términos.
 """
@@ -17,9 +17,9 @@ cuerpo_original = origen.split("\n---\n", 1)[1]
 cuerpo = cuerpo_original
 cuerpo = re.sub(r"\[([^\]]+)\]\((?!#)[^)]*\)", r"\1", cuerpo)
 cuerpo = cuerpo.replace("## Tu stack", "## Stack habitual")
-cuerpo = cuerpo.replace("Los del meta-harness están en `docs/adr/`; los de cada proyecto en `brain/wiki/decisiones/`.",
+cuerpo = cuerpo.replace("Los de meta-harness-factory están en `docs/adr/`; los de cada proyecto en `brain/wiki/decisiones/`.",
                         "En este proyecto están en `brain/wiki/decisiones/`.")
-cuerpo = cuerpo.replace("Las del meta-harness están en `catalog/skills/`.", "Las del proyecto están en `.claude/skills/`.")
+cuerpo = cuerpo.replace("Las de meta-harness-factory están en `catalog/skills/`.", "Las del proyecto están en `.claude/skills/`.")
 cuerpo = cuerpo.replace("# Glosario\n", "# Glosario de la factoría\n", 1)
 cuerpo = re.sub(r"> Los términos están ordenados por tema\..*\n",
                 "> Los términos están ordenados por tema. Para enlazar uno desde otra nota del brain: "
@@ -29,7 +29,7 @@ type: Glosario
 title: Glosario de la factoría
 description: Siglas y términos del proceso de trabajo con agentes (FTD, ASDD, riesgo, evidencia, brain…), explicados en lenguaje claro.
 tags: [glosario, factoria]
-generated: { by: meta-harness, at: {{FECHA}} }
+generated: { by: meta-harness-factory, at: {{FECHA}} }
 status: stable
 ---
 """

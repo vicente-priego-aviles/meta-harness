@@ -1,6 +1,6 @@
 # Tutorial
 
-En este tutorial instalas **[meta-harness](../ayuda/glosario.md#meta-harness)** en **Spring PetClinic**, la aplicación de ejemplo oficial de Spring, y haces tu primer cambio con él, de principio a fin. Todas las salidas que verás son reales: el tutorial se ejecutó tal cual. Al terminar sabrás qué se instala, para qué sirve cada pieza y cómo trabaja el agente contigo.
+En este tutorial instalas **[meta-harness-factory](../ayuda/glosario.md#meta-harness)** en **Spring PetClinic**, la aplicación de ejemplo oficial de Spring, y haces tu primer cambio con él, de principio a fin. Todas las salidas que verás son reales: el tutorial se ejecutó tal cual. Al terminar sabrás qué se instala, para qué sirve cada pieza y cómo trabaja el agente contigo.
 
 <div class="grid cards" markdown>
 

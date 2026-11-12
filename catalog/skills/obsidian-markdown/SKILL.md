@@ -1,11 +1,11 @@
 ---
 name: obsidian-markdown
-description: Escribe notas válidas para Obsidian siguiendo las convenciones del meta-harness (frontmatter OKF, enlaces markdown relativos, callouts, embeds, Mermaid). Úsala al crear o editar cualquier .md del brain o de docs/, o cuando se hable de callouts, propiedades, embeds o enlaces de Obsidian.
+description: Escribe notas válidas para Obsidian siguiendo las convenciones de meta-harness-factory (frontmatter OKF, enlaces markdown relativos, callouts, embeds, Mermaid). Úsala al crear o editar cualquier .md del brain o de docs/, o cuando se hable de callouts, propiedades, embeds o enlaces de Obsidian.
 tags: [obsidian, markdown, okf, documentacion]
 origen: "Adaptada de una skill con licencia MIT; ver AVISOS-DE-TERCEROS.md"
 ---
 
-# Markdown para Obsidian (convención meta-harness)
+# Markdown para Obsidian (convención meta-harness-factory)
 
 Solo cubre lo específico de Obsidian y nuestras reglas; el Markdown estándar se da por sabido.
 
@@ -16,7 +16,7 @@ Solo cubre lo específico de Obsidian y nuestras reglas; el Markdown estándar s
 4. **Callouts** para avisos y estados; **Mermaid** para diagramas simples; skill `excalidraw` para los complejos.
 5. **Comprobar**: enlaces que resuelven y frontmatter YAML válido.
 
-## Enlaces (regla del meta-harness)
+## Enlaces (regla de meta-harness-factory)
 | Caso | Sintaxis |
 |---|---|
 | Nota o archivo de la bóveda | `[Texto](ruta/relativa/nota.md)` — **markdown relativo al archivo** (OKF, ADR-0002) |
@@ -44,7 +44,7 @@ Detalles (PDF, audio, búsquedas) en `references/sintaxis.md`.
 > [!warning]- Plegado por defecto
 > Texto.
 ```
-Uso fijo en el meta-harness:
+Uso fijo en meta-harness-factory:
 | Callout | Para |
 |---|---|
 | `[!abstract]` | resumen al inicio de una nota larga |

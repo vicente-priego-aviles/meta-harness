@@ -115,7 +115,7 @@ Lo que necesita tu criterio va a la **[cola de decisiones](../ayuda/glosario.md#
 El agente comprueba **cada criterio de aceptación con su prueba** y lo deja en `verificaciones/`. Un control que no se ejecutó aparece como «no ejecutado», nunca como «pasado». Después abre el PR. Si es de riesgo 2, el [hook](../ayuda/glosario.md#hook) solo deja subirlo con la spec aprobada y la revisión aprobada para esa rama, y el PR espera tu aprobación.
 
 ## Cuánto cuesta
-Una spec de este tamaño es lo más caro de **[meta-harness](../ayuda/glosario.md#meta-harness)**, porque la redacta el modelo más capaz:
+Una spec de este tamaño es lo más caro de **[meta-harness-factory](../ayuda/glosario.md#meta-harness)**, porque la redacta el modelo más capaz:
 
 | Versión | Coste |
 |---|---|

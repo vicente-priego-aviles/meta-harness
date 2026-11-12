@@ -1,6 +1,6 @@
 # Las cinco capas
 
-**[meta-harness](../ayuda/glosario.md#meta-harness)** organiza lo que instala en cinco capas. Cada una responde a una pregunta y la implementa una pieza concreta de Claude Code:
+**[meta-harness-factory](../ayuda/glosario.md#meta-harness)** organiza lo que instala en cinco capas. Cada una responde a una pregunta y la implementa una pieza concreta de Claude Code:
 
 | # | Capa | Pregunta | Dónde vive en el proyecto | Pieza de Claude Code |
 |---|---|---|---|---|
@@ -69,7 +69,7 @@ Se prefieren las herramientas de línea de comandos (`gh`, `mvn`, `docker`) a lo
 ## Lo que carga Claude Code y cuándo
 Todo lo que el agente tiene en contexto se paga en cada mensaje. Por eso cada pieza se carga lo más tarde posible:
 
-| Pieza | Cuándo se carga | Límite en meta-harness |
+| Pieza | Cuándo se carga | Límite en meta-harness-factory |
 |---|---|---|
 | `CLAUDE.md` raíz | siempre | índice corto: qué es, mapa, comandos |
 | Orientación del hook de arranque | al empezar, tras `/clear` y tras compactar | ≤ 1,5 KB |

@@ -1,6 +1,6 @@
 # Hooks y guardarraíles
 
-Un **[hook](../ayuda/glosario.md#hook)** es un script que Claude Code ejecuta en un momento fijo de la sesión: al arrancar, antes de lanzar un comando, después de editar un archivo… Funciona **fuera del modelo**, así que no depende de que el agente recuerde una instrucción. **[meta-harness](../ayuda/glosario.md#meta-harness)** los usa para tres cosas: orientar al agente, impedir que se salte los procesos y dejar rastro en el [brain](../ayuda/glosario.md#brain).
+Un **[hook](../ayuda/glosario.md#hook)** es un script que Claude Code ejecuta en un momento fijo de la sesión: al arrancar, antes de lanzar un comando, después de editar un archivo… Funciona **fuera del modelo**, así que no depende de que el agente recuerde una instrucción. **[meta-harness-factory](../ayuda/glosario.md#meta-harness)** los usa para tres cosas: orientar al agente, impedir que se salte los procesos y dejar rastro en el [brain](../ayuda/glosario.md#brain).
 
 Los hooks están en `.mh/hooks/` y se conectan en `.claude/settings.json`. Son scripts de [Node.js](../ayuda/glosario.md#nodejs) sin dependencias.
 

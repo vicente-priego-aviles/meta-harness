@@ -13,9 +13,9 @@ export const PROTEGIDOS = [
   ["**/*ArchTest*.java", "test de arquitectura (ArchUnit)"],
   ["**/*ArchitectureTest*.java", "test de arquitectura (ArchUnit)"],
   ["**/archunit.properties", "configuración de ArchUnit"],
-  [".mh.json", "configuración del meta-harness (tabla de riesgo, perfil)"],
+  [".mh.json", "configuración de meta-harness-factory (tabla de riesgo, perfil)"],
   [".claude/settings.json", "hooks y permisos del harness"],
-  [".mh/**", "piezas instaladas del meta-harness"],
+  [".mh/**", "piezas instaladas de meta-harness-factory"],
   ["brain/factory/constitucion.md", "constitución del proyecto"],
 ];
 

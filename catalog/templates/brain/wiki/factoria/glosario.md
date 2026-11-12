@@ -3,7 +3,7 @@ type: Glosario
 title: Glosario de la factoría
 description: Siglas y términos del proceso de trabajo con agentes (FTD, ASDD, riesgo, evidencia, brain…), explicados en lenguaje claro.
 tags: [glosario, factoria]
-generated: { by: meta-harness, at: {{FECHA}} }
+generated: { by: meta-harness-factory, at: {{FECHA}} }
 status: stable
 ---
 
@@ -115,16 +115,16 @@ Bloque YAML entre `---` al principio de una nota con sus propiedades. Obsidian l
 *Large Language Model*, **modelo de lenguaje** grande: la inteligencia artificial que lee el texto (tu petición, el código, las instrucciones) y genera la respuesta. Claude es un LLM. Cuando esta documentación habla de «modelo», se refiere a un LLM.
 
 ### Modelos de Claude
-Anthropic ofrece modelos de varios tamaños. Los **grandes** (Opus) razonan mejor y cuestan más por token; los **medianos** (Sonnet) son el equilibrio para el trabajo diario; los **pequeños** (Haiku) son rápidos y baratos, suficientes para tareas mecánicas como buscar archivos o lanzar tests. El meta-harness asigna a cada subagente el tamaño que necesita su tarea.
+Anthropic ofrece modelos de varios tamaños. Los **grandes** (Opus) razonan mejor y cuestan más por token; los **medianos** (Sonnet) son el equilibrio para el trabajo diario; los **pequeños** (Haiku) son rápidos y baratos, suficientes para tareas mecánicas como buscar archivos o lanzar tests. Meta-harness-factory asigna a cada subagente el tamaño que necesita su tarea.
 
 ### Harness
 *Arnés*. Lo que rodea al modelo de IA para que trabaje bien: herramientas, permisos, instrucciones, memoria y controles. Claude Code es un harness.
 
 ### Meta-harness
-Lo que montamos **encima** de Claude Code: este proyecto. Un catálogo y un instalador que preparan el harness de cada proyecto nuevo a su medida.
+Lo que montamos **encima** de Claude Code: un catálogo y un instalador que preparan el harness de cada proyecto nuevo a su medida. Este proyecto se llama **meta-harness-factory** (hasta noviembre de 2026, *meta-harness*): un meta-harness para trabajar como una factoría de software.
 
 ### CLAUDE.md
-Archivo de instrucciones que Claude Code lee en cada petición. En el meta-harness es un **índice corto** que apunta al brain, las skills y los comandos. Un `CLAUDE.md` dentro de un módulo solo se carga al trabajar en ese módulo.
+Archivo de instrucciones que Claude Code lee en cada petición. En meta-harness-factory es un **índice corto** que apunta al brain, las skills y los comandos. Un `CLAUDE.md` dentro de un módulo solo se carga al trabajar en ese módulo.
 
 ### Skill
 *Habilidad*. Carpeta con instrucciones (`SKILL.md`) y, si hace falta, referencias y scripts para una tarea concreta. Claude solo ve su descripción hasta que la usa. Las del proyecto están en `.claude/skills/`.
@@ -148,7 +148,7 @@ Cuando la conversación llena el contexto, Claude Code la resume para seguir. Se
 Unidad en la que el modelo lee y escribe texto (aprox. ¾ de palabra). Lo que se cobra y lo que limita el contexto.
 
 ### MCP
-**Model Context Protocol** — protocolo para conectar herramientas externas a Claude. El meta-harness prefiere CLI (`gh`, `mvn`, `docker`) porque gasta menos contexto.
+**Model Context Protocol** — protocolo para conectar herramientas externas a Claude. Meta-harness-factory prefiere CLI (`gh`, `mvn`, `docker`) porque gasta menos contexto.
 
 ### LSP
 **Language Server Protocol** — el «motor» que usan los IDE para ir a definiciones o ver errores. Con el plugin `jdtls-lsp`, Claude navega el código Java por símbolos en vez de leer archivos enteros.
@@ -163,22 +163,22 @@ Nivel de control del harness en un proyecto: `minimal` (orientación y comandos 
 Si un hook falla por un error propio (entrada rara, git ausente), **no bloquea**: deja seguir sin decidir nada. Así un fallo del harness nunca impide trabajar.
 
 ### mvnq
-Envoltorio de Maven del meta-harness (`node .mh/scripts/mvnq.mjs <objetivos>`): ejecuta Maven, muestra solo errores, fallos de test y resumen, y guarda el log completo en `.mh/tmp/`. Ahorra muchos tokens en cada build.
+Envoltorio de Maven de meta-harness-factory (`node .mh/scripts/mvnq.mjs <objetivos>`): ejecuta Maven, muestra solo errores, fallos de test y resumen, y guarda el log completo en `.mh/tmp/`. Ahorra muchos tokens en cada build.
 
 ### .mh
-Carpeta del proyecto con lo que instala el meta-harness: hooks, scripts, orientación y temporales (`.mh/tmp/`, que git ignora). Su configuración está en `.mh.json`.
+Carpeta del proyecto con lo que instala meta-harness-factory: hooks, scripts, orientación y temporales (`.mh/tmp/`, que git ignora). Su configuración está en `.mh.json`.
 
 ### Referencia de proveedor
-Documentación mantenida por el fabricante de una tecnología (p. ej. las skills oficiales de Camunda) que el meta-harness instala en `.mh/vendor/` sin reescribirla. No ocupa contexto: una skill propia la cita cuando hace falta.
+Documentación mantenida por el fabricante de una tecnología (p. ej. las skills oficiales de Camunda) que meta-harness-factory instala en `.mh/vendor/` sin reescribirla. No ocupa contexto: una skill propia la cita cuando hace falta.
 
 ### Onboarding
-Primera instalación del meta-harness en un proyecto (`mh instalar`): entrevista de cinco preguntas, escaneo del proyecto, plan y aplicación tras aceptarlo.
+Primera instalación de meta-harness-factory en un proyecto (`mh instalar`): entrevista de cinco preguntas, escaneo del proyecto, plan y aplicación tras aceptarlo.
 
 ### Módulo
 Paquete del catálogo que se instala entero o no se instala: `nucleo` (siempre), `java`, `ddd`, `camunda`, `vaadin`. Cada uno trae sus skills, revisores y reglas, y se propone según las señales del proyecto.
 
 ### Primero el plan
-Forma de instalar del meta-harness: primero **propone** qué instalar (cada pieza como *seleccionada*, *aplazada* o *excluida*, con su motivo) y no escribe nada hasta que aceptas ese plan concreto.
+Forma de instalar de meta-harness-factory: primero **propone** qué instalar (cada pieza como *seleccionada*, *aplazada* o *excluida*, con su motivo) y no escribe nada hasta que aceptas ese plan concreto.
 
 ## Obsidian
 
@@ -227,7 +227,7 @@ Formato de `CHANGELOG.md` con una sección por versión y apartados fijos (Añad
 Rama en la que no se hace commit directo (por ejemplo `main` o `develop`): los cambios llegan por rama de trabajo y PR. El hook la hace cumplir según `.mh.json`.
 
 ### Gestor de tareas
-Herramienta donde viven las tareas del proyecto: GitHub Issues, Jira o GitLab Issues. El meta-harness habla con ella a través de su CLI (`gh`, `acli`, `glab`) con el script `tarea.mjs`.
+Herramienta donde viven las tareas del proyecto: GitHub Issues, Jira o GitLab Issues. Meta-harness-factory habla con ella a través de su CLI (`gh`, `acli`, `glab`) con el script `tarea.mjs`.
 
 ### Épica
 Tarea grande que agrupa otras: en el gestor de tareas, las tareas de una funcionalidad cuelgan de ella. En ASDD, si el trabajo no viene de una tarea, se crea una épica a partir de la spec aprobada. Jira la tiene como tipo (`Epic`); en GitHub solo existe en organizaciones con tipos de issue, y si no, el título empieza por «Épica:».
@@ -245,16 +245,16 @@ Relación entre dos tareas: una no puede empezar hasta que la otra termine. Sale
 En una entrevista por rondas (`/interrogar`), las decisiones que ya se pueden tomar porque no dependen de otra aún abierta. Cada ronda pregunta solo la frontera.
 
 ### Node.js
-Entorno que ejecuta programas escritos en JavaScript fuera del navegador; para JavaScript es lo que la JVM para Java. El instalador, los hooks y los scripts del meta-harness son programas de Node.js sin dependencias externas.
+Entorno que ejecuta programas escritos en JavaScript fuera del navegador; para JavaScript es lo que la JVM para Java. El instalador, los hooks y los scripts de meta-harness-factory son programas de Node.js sin dependencias externas.
 
 ### .mjs
-Extensión de un archivo JavaScript escrito como **módulo ES** (el sistema de módulos estándar de JavaScript, con `import`/`export`). Node.js lo ejecuta directamente, sin compilar: `node installer/mh.mjs`. En `mh.mjs`, *mh* son las iniciales de meta-harness.
+Extensión de un archivo JavaScript escrito como **módulo ES** (el sistema de módulos estándar de JavaScript, con `import`/`export`). Node.js lo ejecuta directamente, sin compilar: `node installer/mh.mjs`. En `mh.mjs`, *mh* son las iniciales de meta-harness-factory.
 
 ### CLI
-**Command Line Interface** — *interfaz de línea de comandos*: programa que se usa desde la terminal (por ejemplo `gh`). El meta-harness la prefiere a MCP porque gasta menos contexto.
+**Command Line Interface** — *interfaz de línea de comandos*: programa que se usa desde la terminal (por ejemplo `gh`). Meta-harness-factory la prefiere a MCP porque gasta menos contexto.
 
 ### Lockfile
-Archivo que fija la versión exacta de cada dependencia de un proyecto Node.js (`package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`), para que todos instalen lo mismo. Cambiarlo es cambiar dependencias: en el meta-harness es riesgo 2, igual que `package.json` o `pom.xml`.
+Archivo que fija la versión exacta de cada dependencia de un proyecto Node.js (`package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`), para que todos instalen lo mismo. Cambiarlo es cambiar dependencias: en meta-harness-factory es riesgo 2, igual que `package.json` o `pom.xml`.
 
 ### Zeebe
 Motor de procesos de Camunda 8: ejecuta los BPMN desplegados y reparte el trabajo de cada tarea automática como *jobs*.

@@ -4,24 +4,24 @@ Todas las cifras de esta guía salen de pruebas reales con Claude Code: un proye
 
 ## Cómo se midió
 - **Proyectos**: una copia aparte del proyecto de reservas de viaje (seis microservicios Spring Boot 4, Camunda 8.9, [jMolecules](../ayuda/glosario.md#jmolecules) y siete modelos [BPMN](../ayuda/glosario.md#bpmn-dmn)/DMN), sin tocar el original, y un clon de Spring PetClinic.
-- **Con y sin**: la misma petición en dos clones del mismo commit, uno con **[meta-harness](../ayuda/glosario.md#meta-harness)** instalado y otro sin él.
+- **Con y sin**: la misma petición en dos clones del mismo commit, uno con **[meta-harness-factory](../ayuda/glosario.md#meta-harness)** instalado y otro sin él.
 - **Modelo**: Sonnet 5.5 como agente principal, con Claude Code en modo no interactivo (`claude -p`). Los [subagentes](../ayuda/glosario.md#subagente) usan su propio modelo (Haiku, Sonnet u Opus).
 - **Coste**: el que informa Claude Code al terminar, calculado con las tarifas de la API ([tabla de tarifas](../uso/ftd.md#cuanto-cuesta)). Con una suscripción Pro o Max no se paga por tarea: cuenta contra el límite de uso del plan.
 
 La medición completa del proyecto de reservas de viaje costó 4,21 USD.
 
-## Con y sin meta-harness
-| Tarea | Sin meta-harness | Con meta-harness | Diferencia |
+## Con y sin meta-harness-factory
+| Tarea | Sin meta-harness-factory | Con meta-harness-factory | Diferencia |
 |---|---|---|---|
 | **Pregunta**: qué worker procesa `activar-cliente` | 0,092 USD · 4 turnos | 0,131 USD · 7 turnos | +42 % |
 | **[FTD](../ayuda/glosario.md#ftd)**: test de arquitectura con [ArchUnit](../ayuda/glosario.md#archunit) | 0,167 USD · 8 turnos | 0,193 USD · 11 turnos | +16 % |
 
-En las dos tareas, los dos clones llegaron al mismo resultado principal. Lo que añadió meta-harness:
+En las dos tareas, los dos clones llegaron al mismo resultado principal. Lo que añadió meta-harness-factory:
 
 - **En la pregunta**, encontró además un posible `NullPointerException` fuera del `try` y citó la regla de Camunda que incumple el worker ([Responder](../uso/responder.md)).
 - **En el FTD**, dejó un documento con checklist y evidencia, y declaró como «no ejecutado» el control que no ejecutó, en lugar de darlo por pasado ([FTD](../uso/ftd.md#cuando-algo-sale-en-rojo)).
 
-El sobrecoste es sobre todo **de comportamiento**: más turnos para leer el caso de uso o escribir el documento, y cada turno vuelve a enviar todo el contexto. Lo fijo que añade meta-harness es pequeño, unos 3.000 [tokens](../ayuda/glosario.md#token).
+El sobrecoste es sobre todo **de comportamiento**: más turnos para leer el caso de uso o escribir el documento, y cada turno vuelve a enviar todo el contexto. Lo fijo que añade meta-harness-factory es pequeño, unos 3.000 [tokens](../ayuda/glosario.md#token).
 
 ## Una spec ASDD
 | Versión | Coste | De eso, Opus | De eso, Haiku |
@@ -44,7 +44,7 @@ La [spec](../ayuda/glosario.md#spec) inventarió 15 workers, encontró un fallo 
 | [Siempre activo](../ayuda/glosario.md#siempre-activo) en el proyecto de reservas de viaje | 9 [skills](../ayuda/glosario.md#skill) automáticas (2.146 caracteres de descripciones), 0 reglas |
 
 ## Lo que salió mal y se corrigió
-Las pruebas destaparon fallos de meta-harness. Todos están corregidos en el catálogo:
+Las pruebas destaparon fallos de meta-harness-factory. Todos están corregidos en el catálogo:
 
 | Qué pasó | Corrección |
 |---|---|
@@ -57,4 +57,4 @@ Las pruebas destaparon fallos de meta-harness. Todos están corregidos en el cat
 | La puerta de riesgo no bloqueaba `glab mr create` (GitLab) | añadido, con su test |
 
 ## Conclusión
-En tareas pequeñas, meta-harness cuesta unos céntimos más y a cambio deja el trabajo comprobado y escrito. En tareas grandes, el reparto entre modelos y el filtro de Maven ahorran más de lo que cuesta el [harness](../ayuda/glosario.md#harness). La medición pendiente es un [ASDD](../ayuda/glosario.md#asdd) completo, de la spec al [PR](../ayuda/glosario.md#pr), con y sin meta-harness.
+En tareas pequeñas, meta-harness-factory cuesta unos céntimos más y a cambio deja el trabajo comprobado y escrito. En tareas grandes, el reparto entre modelos y el filtro de Maven ahorran más de lo que cuesta el [harness](../ayuda/glosario.md#harness). La medición pendiente es un [ASDD](../ayuda/glosario.md#asdd) completo, de la spec al [PR](../ayuda/glosario.md#pr), con y sin meta-harness-factory.

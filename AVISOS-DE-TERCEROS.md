@@ -1,9 +1,9 @@
 # Avisos de terceros
 
-meta-harness incluye material adaptado de proyectos de código abierto. Este archivo recoge, como piden sus licencias, de dónde sale cada parte, quién tiene sus derechos y con qué licencia se distribuye. Es el único lugar del repositorio donde se nombran esos proyectos y sus autores.
+meta-harness-factory incluye material adaptado de proyectos de código abierto. Este archivo recoge, como piden sus licencias, de dónde sale cada parte, quién tiene sus derechos y con qué licencia se distribuye. Es el único lugar del repositorio donde se nombran esos proyectos y sus autores.
 
 ## Material adaptado
-| Parte de meta-harness | Proyecto de origen | Versión | Licencia | Copyright |
+| Parte de meta-harness-factory | Proyecto de origen | Versión | Licencia | Copyright |
 |---|---|---|---|---|
 | skill `brain` y `scripts/verificar_evidencias.py` | [Astro-Han/karpathy-llm-wiki](https://github.com/Astro-Han/karpathy-llm-wiki) | `eafcc77` | MIT | Copyright (c) 2026 Yuhan Lei |
 | skills `obsidian-markdown` (y `references/sintaxis.md`), `obsidian-bases` y `defuddle` | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | `3ccff53` | MIT | Copyright (c) 2026 Steph Ango (@kepano) |
